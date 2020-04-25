@@ -20,4 +20,3 @@ jobs:
         name: Ktlint Report
         path: app/build/reports/ktlint/index.html
       if: failure()
-
