@@ -15,7 +15,6 @@ object Dep {
         val liveDataCoreKtx = "androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0"
         val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
 
-
         object Navigation {
             val version = "2.3.0-alpha03"
             val runtimeKtx = "androidx.navigation:navigation-runtime-ktx:$version"
@@ -40,14 +39,18 @@ object Dep {
 
     object Dagger {
         val version = "2.27"
+        val android = "com.google.dagger:dagger-android:$version"
+        val androidSupport = "com.google.dagger:dagger-android-support:$version"
         val core = "com.google.dagger:dagger:$version"
         val compiler = "com.google.dagger:dagger-compiler:$version"
-        val androidSupport = "com.google.dagger:dagger-android-support:$version"
-        val android = "com.google.dagger:dagger-android:$version"
         val androidProcessor = "com.google.dagger:dagger-android-processor:$version"
         val assistedInjectAnnotations =
             "com.squareup.inject:assisted-inject-annotations-dagger2:0.5.2"
         val assistedInjectProcessor = "com.squareup.inject:assisted-inject-processor-dagger2:0.5.2"
     }
 
+    object Util {
+        val version = "4.7.1"
+        val timber = "com.jakewharton.timber:timber:$version"
+    }
 }

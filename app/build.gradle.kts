@@ -29,6 +29,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":core"))
+
     implementation(Dep.Kotlin.stdlibJvm)
     implementation(Dep.AndroidX.appCompat)
     implementation(Dep.AndroidX.coreKtx)
