@@ -16,7 +16,7 @@ object Dep {
         val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
 
         object Navigation {
-            val version = "2.3.0-alpha03"
+            private val version = "2.3.0-alpha03"
             val runtimeKtx = "androidx.navigation:navigation-runtime-ktx:$version"
             val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:$version"
             val uiKtx = "androidx.navigation:navigation-ui-ktx:2.3.0-alpha03"
@@ -26,19 +26,19 @@ object Dep {
     }
 
     object Threetenabp {
-        val version = "1.2.4"
+        private val version = "1.2.4"
         val threetenabp = "com.jakewharton.threetenabp:threetenabp:$version"
     }
 
     object Kotlin {
-        val version = "1.3.72"
+        private val version = "1.3.72"
         val stdlibJvm = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version"
         val coroutinesVersion = "1.3.5"
         val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     }
 
     object Dagger {
-        val version = "2.27"
+        private val version = "2.27"
         val android = "com.google.dagger:dagger-android:$version"
         val androidSupport = "com.google.dagger:dagger-android-support:$version"
         val core = "com.google.dagger:dagger:$version"
@@ -50,7 +50,7 @@ object Dep {
     }
 
     object Util {
-        val version = "4.7.1"
+        private val version = "4.7.1"
         val timber = "com.jakewharton.timber:timber:$version"
     }
 }

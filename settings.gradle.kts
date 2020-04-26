@@ -1,6 +1,7 @@
 include(
     ":app",
-    ":core"
+    ":core",
+    ":model"
 )
 
 rootProject.name = "exchange"

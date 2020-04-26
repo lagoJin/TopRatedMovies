@@ -7,18 +7,17 @@ plugins {
 
 apply {
     from(rootProject.file("ktlint.gradle"))
+    from(rootProject.file("gradle/android.gradle"))
 }
 
 android {
-    compileSdkVersion(Versions.compileSdkVersion)
-    buildToolsVersion("29.0.3")
 
     defaultConfig {
         applicationId = Packages.name
-        minSdkVersion(Versions.minSdkVersion)
-        targetSdkVersion(Versions.targetSdkVersion)
+
         versionCode = Versions.versionCode
         versionName = Versions.versionName
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         testInstrumentationRunnerArguments = mapOf("clearPackageData" to "true")
     }
@@ -30,6 +29,7 @@ android {
 
 dependencies {
     implementation(project(":core"))
+    implementation(project(":model"))
 
     implementation(Dep.Kotlin.stdlibJvm)
     implementation(Dep.AndroidX.appCompat)
