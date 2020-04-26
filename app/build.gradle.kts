@@ -30,6 +30,7 @@ android {
 dependencies {
     implementation(project(":core"))
     implementation(project(":model"))
+    implementation(project(":feature:home"))
 
     implementation(Dep.Kotlin.stdlibJvm)
     implementation(Dep.AndroidX.appCompat)

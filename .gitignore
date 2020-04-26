@@ -111,6 +111,8 @@ obj/
 .idea/codeStyles/codeStyleConfig.xml
 .idea/codeStyles/project.xml
 .idea/gradle.xml
+.idea/kotlinScripting.xml
+.idea/runConfigurations.xml
 
 # OS-specific files
 .DS_Store
