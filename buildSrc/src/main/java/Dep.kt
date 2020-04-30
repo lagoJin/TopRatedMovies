@@ -25,6 +25,21 @@ object Dep {
         }
     }
 
+    object Retrofit {
+        private val version = "2.8.1"
+
+        val retrofit = "com.squareup.retrofit2:retrofit:$version"
+        val gson = "com.squareup.retrofit2:converter-gson:$version"
+
+    }
+
+    object OkHttp {
+        private val version = "4.6.0"
+        val okhttp = "com.squareup.okhttp3:okhttp:$version"
+        val interceptor = "com.squareup.okhttp3:logging-interceptor:$version"
+
+    }
+
     object Threetenabp {
         private val version = "1.2.4"
         val threetenabp = "com.jakewharton.threetenabp:threetenabp:$version"

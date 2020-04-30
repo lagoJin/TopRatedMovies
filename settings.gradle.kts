@@ -1,6 +1,7 @@
 include(
     ":app",
     ":feature:home",
+    ":data:api",
     ":core",
     ":model"
 )
