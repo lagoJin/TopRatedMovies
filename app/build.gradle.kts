@@ -29,7 +29,6 @@ android {
 
 dependencies {
     implementation(project(":core"))
-    implementation(project(":model"))
     implementation(project(":feature:home"))
     implementation(project(":data:api"))
 
@@ -38,6 +37,10 @@ dependencies {
     implementation(Dep.AndroidX.coreKtx)
     implementation(Dep.AndroidX.constraint)
     implementation(Dep.AndroidX.activityKtx)
+
+    implementation(Dep.AndroidX.Navigation.uiKtx)
+    implementation(Dep.AndroidX.Navigation.fragmentKtx)
+    implementation(Dep.AndroidX.Navigation.dynamicFeaturesFragment)
 
     implementation(Dep.Dagger.core)
     implementation(Dep.Dagger.androidSupport)

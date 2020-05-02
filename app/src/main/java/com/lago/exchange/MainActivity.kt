@@ -25,5 +25,7 @@ class MainActivity : DaggerAppCompatActivity() {
             viewModel = this@MainActivity.viewModel
             lifecycleOwner = this@MainActivity
         }
+
+        // findNavController(R.id.nav_graph).navigate(R.id.action_main_to_home)
     }
 }

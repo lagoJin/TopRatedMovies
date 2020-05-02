@@ -15,6 +15,9 @@ dependencies {
     implementation(Dep.AndroidX.activityKtx)
     implementation(Dep.AndroidX.fragmentKtx)
 
+    implementation(Dep.AndroidX.Navigation.uiKtx)
+    implementation(Dep.AndroidX.Navigation.dynamicFeaturesFragment)
+
     implementation(Dep.Dagger.android)
 
     implementation(Dep.Util.timber)
