@@ -7,9 +7,23 @@ import dagger.Module
 import dagger.Provides
 import okhttp3.Cache
 import okhttp3.OkHttpClient
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 @Module(includes = [ApiModule.Providers::class])
 internal class ApiModule {
+
+    @Provides
+    fun provideExchangeApiService(
+        okHttpClient: OkHttpClient
+    ): ExchangeService {
+        return Retrofit.Builder()
+            .baseUrl("API_BASE_URL")
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(okHttpClient)
+            .build()
+            .create(ExchangeService::class.java)
+    }
 
     @Module
     internal object Providers {

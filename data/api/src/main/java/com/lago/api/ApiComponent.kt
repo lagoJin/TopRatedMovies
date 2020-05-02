@@ -9,6 +9,8 @@ import javax.inject.Singleton
 @Component(modules = [ApiModule::class])
 interface ApiComponent {
 
+    fun exchangeApi(): ExchangeService
+
     @Component.Factory
     interface Factory {
         fun create(@BindsInstance context: Context): ApiComponent

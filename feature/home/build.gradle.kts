@@ -10,10 +10,6 @@ apply {
     from(rootProject.file("gradle/android.gradle"))
 }
 
-androidExtensions {
-    features = setOf("parcelize")
-}
-
 dependencies {
     implementation(Dep.Kotlin.stdlibJvm)
     implementation(Dep.Kotlin.coroutines)

@@ -31,6 +31,7 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":model"))
     implementation(project(":feature:home"))
+    implementation(project(":data:api"))
 
     implementation(Dep.Kotlin.stdlibJvm)
     implementation(Dep.AndroidX.appCompat)
