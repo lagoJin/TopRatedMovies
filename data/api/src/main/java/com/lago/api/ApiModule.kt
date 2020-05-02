@@ -18,7 +18,7 @@ internal class ApiModule {
         okHttpClient: OkHttpClient
     ): ExchangeService {
         return Retrofit.Builder()
-            .baseUrl("API_BASE_URL")
+            .baseUrl(Key.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
