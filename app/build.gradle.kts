@@ -31,6 +31,7 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":feature:home"))
     implementation(project(":data:api"))
+    implementation(project(":data:repository"))
 
     implementation(Dep.Kotlin.stdlibJvm)
     implementation(Dep.AndroidX.appCompat)
@@ -41,6 +42,8 @@ dependencies {
     implementation(Dep.AndroidX.Navigation.uiKtx)
     implementation(Dep.AndroidX.Navigation.fragmentKtx)
     implementation(Dep.AndroidX.Navigation.dynamicFeaturesFragment)
+
+    implementation(Dep.Util.timber)
 
     implementation(Dep.Dagger.core)
     implementation(Dep.Dagger.androidSupport)

@@ -11,9 +11,9 @@ apply {
 }
 
 dependencies {
+    api(project(":model"))
     implementation(project(":data:api"))
     implementation(project(":core"))
-    implementation(project(":model"))
 
     implementation(Dep.Kotlin.stdlibJvm)
     implementation(Dep.Kotlin.coroutines)

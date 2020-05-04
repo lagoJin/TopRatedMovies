@@ -12,6 +12,7 @@ object Dep {
         val fragmentKtx = "androidx.fragment:fragment-ktx:1.2.2"
 
         val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata:2.2.0"
+        val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-beta01"
         val liveDataCoreKtx = "androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0"
         val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
 

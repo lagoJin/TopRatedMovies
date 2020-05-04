@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.lago.core.assistedViewModels
 import com.lago.home.databinding.HomeFragmentBinding
-import com.lago.home.di.HomeViewModel
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 

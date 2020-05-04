@@ -2,6 +2,7 @@ package com.lago.exchange.di
 
 import android.app.Application
 import com.lago.exchange.ExchangeApplication
+import com.lago.repository.RepositoryComponent
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -16,6 +17,7 @@ import javax.inject.Singleton
         AppAssistedInjectModule::class,
         MainActivityModule.MainActivityBuilder::class,
         ViewModelModule::class,
+        RepositoryComponentModule::class,
         ApiComponentModule::class
     ]
 )

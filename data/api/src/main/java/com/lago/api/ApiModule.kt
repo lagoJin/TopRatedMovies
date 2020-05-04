@@ -32,9 +32,9 @@ internal class ApiModule {
         fun provideOkHttpClient(
             context: Context
         ): OkHttpClient = OkHttpClient.Builder()
-            .cache(Cache(context.cacheDir, 1 * 1024 * 1024)) // 1 MB
+            /*.cache(Cache(context.cacheDir, 1 * 1024 * 1024)) // 1 MB
             .addInterceptor(createOkHttpInterceptor())
-            .addNetworkInterceptor(createOkHttpNetworkInterceptor())
+            .addNetworkInterceptor(createOkHttpNetworkInterceptor())*/
             .addNetworkDebuggingInterceptor()
             .build()
     }

@@ -20,6 +20,9 @@ dependencies {
     implementation(Dep.Kotlin.coroutines)
 
     implementation(Dep.AndroidX.constraint)
+    implementation(Dep.AndroidX.viewModelKtx)
+
+    implementation(Dep.Util.timber)
 
     implementation(Dep.Dagger.core)
     implementation(Dep.Dagger.androidSupport)
