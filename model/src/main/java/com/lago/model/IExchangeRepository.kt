@@ -2,7 +2,7 @@ package com.lago.model
 
 import kotlinx.coroutines.flow.Flow
 
-interface ExchangeRepository {
+interface IExchangeRepository {
 
     fun getExchange(): Flow<Exchange>
 }
