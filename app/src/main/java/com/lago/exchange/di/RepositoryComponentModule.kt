@@ -1,8 +1,8 @@
 package com.lago.exchange.di
 
 import android.content.Context
-import com.lago.api.ExchangeService
-import com.lago.model.IExchangeRepository
+import com.lago.api.MovieService
+import com.lago.model.IMovieRepository
 import com.lago.repository.RepositoryComponent
 import dagger.Module
 import dagger.Provides
@@ -15,7 +15,7 @@ class RepositoryComponentModule {
     @Provides
     fun provideExchangeRepository(
         repositoryComponent: RepositoryComponent
-    ): IExchangeRepository {
+    ): IMovieRepository {
         return repositoryComponent.exchangeRepository()
     }
 
@@ -23,10 +23,10 @@ class RepositoryComponentModule {
     @Provides
     fun provideRepositoryComponent(
         context: Context,
-        exchangeService: ExchangeService
+        movieService: MovieService
     ): RepositoryComponent {
         return RepositoryComponent.factory().create(
-            context, exchangeService
+            context, movieService
         )
     }
 }

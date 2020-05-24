@@ -1,8 +1,8 @@
 package com.lago.repository
 
 import android.content.Context
-import com.lago.api.ExchangeService
-import com.lago.model.IExchangeRepository
+import com.lago.api.MovieService
+import com.lago.model.IMovieRepository
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -11,13 +11,13 @@ import javax.inject.Singleton
 @Component(modules = [RepositoryModule::class])
 interface RepositoryComponent {
 
-    fun exchangeRepository(): IExchangeRepository
+    fun exchangeRepository(): IMovieRepository
 
     @Component.Factory
     interface Factory {
         fun create(
             @BindsInstance context: Context,
-            @BindsInstance exchangeService: ExchangeService
+            @BindsInstance movieService: MovieService
         ): RepositoryComponent
     }
 

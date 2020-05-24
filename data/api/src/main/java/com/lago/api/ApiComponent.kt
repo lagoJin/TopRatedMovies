@@ -9,7 +9,7 @@ import javax.inject.Singleton
 @Component(modules = [ApiModule::class])
 interface ApiComponent {
 
-    fun exchangeApi(): ExchangeService
+    fun exchangeApi(): MovieService
 
     @Component.Factory
     interface Factory {

@@ -1,11 +1,8 @@
 package com.lago.api
 
 import android.content.Context
-import com.lago.api.OkHttpInterceptor.createOkHttpInterceptor
-import com.lago.api.OkHttpInterceptor.createOkHttpNetworkInterceptor
 import dagger.Module
 import dagger.Provides
-import okhttp3.Cache
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -16,13 +13,13 @@ internal class ApiModule {
     @Provides
     fun provideExchangeApiService(
         okHttpClient: OkHttpClient
-    ): ExchangeService {
+    ): MovieService {
         return Retrofit.Builder()
-            .baseUrl(Key.BASE_URL)
+            .baseUrl("https://api.themoviedb.org/3/movie/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
-            .create(ExchangeService::class.java)
+            .create(MovieService::class.java)
     }
 
     @Module

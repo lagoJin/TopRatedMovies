@@ -1,7 +1,7 @@
 package com.lago.repository
 
-import com.lago.api.ExchangeService
-import com.lago.model.IExchangeRepository
+import com.lago.api.MovieService
+import com.lago.model.IMovieRepository
 import dagger.Module
 import dagger.Provides
 
@@ -10,9 +10,9 @@ internal class RepositoryModule {
 
     @Provides
     fun exchangeRepository(
-        exchangeService: ExchangeService
-    ): IExchangeRepository {
-        return ExchangeRepository(exchangeService)
+        movieService: MovieService
+    ): IMovieRepository {
+        return MovieRepository(movieService)
     }
 
     @Module

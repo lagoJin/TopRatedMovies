@@ -6,6 +6,7 @@ plugins {
 }
 
 android.dataBinding.isEnabled = true
+android.viewBinding.isEnabled = true
 
 apply {
     from(rootProject.file("ktlint.gradle"))
@@ -21,6 +22,7 @@ dependencies {
 
     implementation(Dep.AndroidX.constraint)
     implementation(Dep.AndroidX.viewModelKtx)
+    implementation(Dep.AndroidX.recyclerView)
 
     implementation(Dep.Util.timber)
 
