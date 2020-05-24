@@ -65,6 +65,11 @@ object Dep {
         val assistedInjectProcessor = "com.squareup.inject:assisted-inject-processor-dagger2:0.5.2"
     }
 
+    object Coil {
+        private val version = "0.11.0"
+        val coil = "io.coil-kt:coil:$version"
+    }
+
     object Util {
         private val version = "4.7.1"
         val timber = "com.jakewharton.timber:timber:$version"

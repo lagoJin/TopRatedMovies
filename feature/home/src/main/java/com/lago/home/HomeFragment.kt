@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import com.lago.core.assistedViewModels
 import com.lago.home.databinding.HomeFragmentBinding
 import dagger.android.support.DaggerFragment
@@ -12,6 +13,7 @@ import javax.inject.Inject
 class HomeFragment : DaggerFragment() {
 
     private lateinit var binding: HomeFragmentBinding
+    lateinit var movieAdapter: MovieAdapter
 
     @Inject
     lateinit var viewModelFactory: HomeViewModel.Factory
@@ -29,6 +31,23 @@ class HomeFragment : DaggerFragment() {
             lifecycleOwner = viewLifecycleOwner
             viewModel = this@HomeFragment.viewModel
         }
+
+        movieAdapter = MovieAdapter()
+
+        binding.recyclerView.apply {
+            adapter = movieAdapter
+            setHasFixedSize(true)
+        }
+
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel.movies.observe(viewLifecycleOwner, Observer { movies ->
+            movieAdapter.submitList(movies)
+        })
+
     }
 }

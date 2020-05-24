@@ -2,7 +2,7 @@ package com.lago.api.response
 
 import com.google.gson.annotations.SerializedName
 
-data class TopRatedMovieResponse(
+data class TopRatedMoviesResponse(
     @SerializedName("page")
     val page: Int,
     @SerializedName("total_results")

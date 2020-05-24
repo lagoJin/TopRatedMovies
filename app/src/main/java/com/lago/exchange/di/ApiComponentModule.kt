@@ -17,6 +17,6 @@ object ApiComponentModule {
     ): MovieService {
         return ApiComponent.factory()
             .create(application)
-            .exchangeApi()
+            .movieApi()
     }
 }

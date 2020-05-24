@@ -15,7 +15,7 @@ internal class ApiModule {
         okHttpClient: OkHttpClient
     ): MovieService {
         return Retrofit.Builder()
-            .baseUrl("https://api.themoviedb.org/3/movie/")
+            .baseUrl("https://api.themoviedb.org/3/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()

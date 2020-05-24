@@ -26,6 +26,8 @@ dependencies {
 
     implementation(Dep.Util.timber)
 
+    implementation(Dep.Coil.coil)
+
     implementation(Dep.Dagger.core)
     implementation(Dep.Dagger.androidSupport)
     implementation(Dep.Dagger.android)
