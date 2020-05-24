@@ -3,14 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    tools:ignore="UnusedNavigation"
+    app:startDestination="@id/home">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/home"
         android:name="com.lago.home.HomeFragment"
-        android:label="Home"
-        tools:layout="@layout/home_fragment">
+        android:label="Home" />
 
+    <fragment
+        android:id="@+id/detail"
+        android:name="com.lago.home.detail.DetailFragment"
+        android:label="Detail">
+
+        <argument
+            android:name="movie"
+            app:argType="integer" />
     </fragment>
+
+    <action
+        android:id="@+id/action_to_detail"
+        app:destination="@+id/detail" />
 
 </navigation>

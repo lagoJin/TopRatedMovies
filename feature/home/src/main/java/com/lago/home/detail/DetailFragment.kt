@@ -4,8 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.lago.core.assistedViewModels
-import com.lago.home.HomeViewModel
+import com.lago.core.extension.assistedViewModels
 import com.lago.home.databinding.DetailFragmentBinding
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject

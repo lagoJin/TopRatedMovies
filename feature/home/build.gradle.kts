@@ -23,6 +23,8 @@ dependencies {
     implementation(Dep.AndroidX.constraint)
     implementation(Dep.AndroidX.viewModelKtx)
     implementation(Dep.AndroidX.recyclerView)
+    implementation(Dep.AndroidX.Navigation.fragmentKtx)
+    implementation(Dep.AndroidX.Navigation.uiKtx)
 
     implementation(Dep.Util.timber)
 

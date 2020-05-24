@@ -1,4 +1,4 @@
-package com.lago.core
+package com.lago.core.extension
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels

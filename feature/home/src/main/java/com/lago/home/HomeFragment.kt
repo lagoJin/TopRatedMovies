@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import com.lago.core.assistedViewModels
+import com.lago.core.extension.assistedViewModels
 import com.lago.home.databinding.HomeFragmentBinding
 import dagger.android.support.DaggerFragment
 import timber.log.Timber
@@ -55,6 +55,5 @@ class HomeFragment : DaggerFragment() {
                 Timber.v(movieId.toString())
             }
         })
-
     }
 }

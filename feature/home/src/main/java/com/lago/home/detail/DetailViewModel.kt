@@ -3,7 +3,7 @@ package com.lago.home.detail
 import androidx.lifecycle.ViewModel
 import com.squareup.inject.assisted.AssistedInject
 
-class DetailViewModel : ViewModel() {
+class DetailViewModel @AssistedInject constructor() : ViewModel() {
 
     @AssistedInject.Factory
     interface Factory {

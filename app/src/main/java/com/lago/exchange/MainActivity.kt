@@ -2,7 +2,7 @@ package com.lago.exchange
 
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.lago.core.assistedActivityViewModels
+import com.lago.core.extension.assistedActivityViewModels
 import com.lago.exchange.databinding.ActivityMainBinding
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
