@@ -4,6 +4,7 @@ import androidx.fragment.app.FragmentActivity
 import com.lago.core.scope.FragmentScope
 import com.lago.exchange.MainActivity
 import com.lago.home.HomeFragment
+import com.lago.home.detail.DetailFragment
 import com.lago.home.di.DetailFragmentModule
 import com.lago.home.di.HomeAssistedInjectModule
 import com.lago.home.di.HomeFragmentModule
@@ -21,10 +22,17 @@ interface MainActivityModule {
     @ContributesAndroidInjector(
         modules = [
             HomeFragmentModule::class,
-            DetailFragmentModule::class,
             HomeAssistedInjectModule::class]
     )
     fun bindHomeFragment(): HomeFragment
+
+    @FragmentScope
+    @ContributesAndroidInjector(
+        modules = [
+            DetailFragmentModule::class,
+            HomeAssistedInjectModule::class]
+    )
+    fun bindDetailFragment(): DetailFragment
 
     @Module
     abstract class MainActivityBuilder {

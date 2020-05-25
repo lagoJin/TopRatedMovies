@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.lago.core.extension.assistedViewModels
 import com.lago.home.databinding.HomeFragmentBinding
 import dagger.android.support.DaggerFragment
@@ -51,7 +52,7 @@ class HomeFragment : DaggerFragment() {
 
         movieAdapter.setItemClickListener(object : MovieAdapter.ItemClickListener {
             override fun onClick(view: View, movieId: Int) {
-                HomeFragmentDirections.actionToDetail(movieId)
+                findNavController().navigate(HomeFragmentDirections.actionToDetail(movieId))
             }
         })
     }
