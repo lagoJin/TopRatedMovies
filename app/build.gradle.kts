@@ -39,7 +39,6 @@ dependencies {
     implementation(Dep.AndroidX.constraint)
     implementation(Dep.AndroidX.activityKtx)
 
-    implementation(Dep.AndroidX.Navigation.uiKtx)
     implementation(Dep.AndroidX.Navigation.fragmentKtx)
     implementation(Dep.AndroidX.Navigation.dynamicFeaturesFragment)
 

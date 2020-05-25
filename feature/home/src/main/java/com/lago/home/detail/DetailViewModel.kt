@@ -9,5 +9,4 @@ class DetailViewModel @AssistedInject constructor() : ViewModel() {
     interface Factory {
         fun create(): DetailViewModel
     }
-
 }

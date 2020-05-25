@@ -12,5 +12,4 @@ interface MovieService {
         @Query("language") language: String = "en-US",
         @Query("page") page: Int = 1
     ): TopRatedMoviesResponse
-
 }

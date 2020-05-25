@@ -1,12 +1,11 @@
 package com.lago.exchange
 
-import android.content.Context
 import android.os.StrictMode
 import timber.log.Timber
 
 object BuildType {
 
-    fun init(context: Context) {
+    fun init() {
         Timber.plant(Timber.DebugTree())
 
         StrictMode.setThreadPolicy(

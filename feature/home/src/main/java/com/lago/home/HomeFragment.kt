@@ -8,13 +8,12 @@ import androidx.lifecycle.Observer
 import com.lago.core.extension.assistedViewModels
 import com.lago.home.databinding.HomeFragmentBinding
 import dagger.android.support.DaggerFragment
-import timber.log.Timber
 import javax.inject.Inject
 
 class HomeFragment : DaggerFragment() {
 
     private lateinit var binding: HomeFragmentBinding
-    lateinit var movieAdapter: MovieAdapter
+    private lateinit var movieAdapter: MovieAdapter
 
     @Inject
     lateinit var viewModelFactory: HomeViewModel.Factory
@@ -52,7 +51,7 @@ class HomeFragment : DaggerFragment() {
 
         movieAdapter.setItemClickListener(object : MovieAdapter.ItemClickListener {
             override fun onClick(view: View, movieId: Int) {
-                Timber.v(movieId.toString())
+                HomeFragmentDirections.actionToDetail(movieId)
             }
         })
     }

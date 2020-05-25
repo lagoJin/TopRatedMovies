@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id("kotlin-android-extensions")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android.dataBinding.isEnabled = true
@@ -23,8 +24,8 @@ dependencies {
     implementation(Dep.AndroidX.constraint)
     implementation(Dep.AndroidX.viewModelKtx)
     implementation(Dep.AndroidX.recyclerView)
+
     implementation(Dep.AndroidX.Navigation.fragmentKtx)
-    implementation(Dep.AndroidX.Navigation.uiKtx)
 
     implementation(Dep.Util.timber)
 

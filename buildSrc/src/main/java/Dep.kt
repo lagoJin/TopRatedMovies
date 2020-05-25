@@ -23,6 +23,8 @@ object Dep {
             val uiKtx = "androidx.navigation:navigation-ui-ktx:2.3.0-alpha03"
             val dynamicFeaturesFragment =
                 "androidx.navigation:navigation-dynamic-features-fragment:$version"
+            val args = "androidx.navigation:navigation-safe-args-gradle-plugin:$version"
+
         }
     }
 

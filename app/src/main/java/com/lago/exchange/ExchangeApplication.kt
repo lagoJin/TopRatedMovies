@@ -12,7 +12,7 @@ class ExchangeApplication : DaggerApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        BuildType.init(this)
+        BuildType.init()
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {

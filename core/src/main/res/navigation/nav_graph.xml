@@ -8,13 +8,11 @@
 
     <fragment
         android:id="@+id/home"
-        android:name="com.lago.home.HomeFragment"
-        android:label="Home" />
+        android:name="com.lago.home.HomeFragment" />
 
     <fragment
         android:id="@+id/detail"
-        android:name="com.lago.home.detail.DetailFragment"
-        android:label="Detail">
+        android:name="com.lago.home.detail.DetailFragment">
 
         <argument
             android:name="movie"

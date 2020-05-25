@@ -2,7 +2,6 @@ package com.lago.exchange.di
 
 import android.app.Application
 import com.lago.exchange.ExchangeApplication
-import com.lago.repository.RepositoryComponent
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule

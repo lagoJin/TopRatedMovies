@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id("kotlin-android-extensions")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 apply {
@@ -15,8 +16,7 @@ dependencies {
     implementation(Dep.AndroidX.activityKtx)
     implementation(Dep.AndroidX.fragmentKtx)
 
-    implementation(Dep.AndroidX.Navigation.uiKtx)
-    implementation(Dep.AndroidX.Navigation.dynamicFeaturesFragment)
+    implementation(Dep.AndroidX.Navigation.fragmentKtx)
 
     implementation(Dep.Dagger.android)
 

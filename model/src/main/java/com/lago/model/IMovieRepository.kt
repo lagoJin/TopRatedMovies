@@ -5,5 +5,4 @@ import kotlinx.coroutines.flow.Flow
 interface IMovieRepository {
 
     fun getMoviesTopRated(): Flow<TopRatedMovies>
-
 }

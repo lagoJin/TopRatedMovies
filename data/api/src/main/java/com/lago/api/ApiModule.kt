@@ -1,8 +1,11 @@
 package com.lago.api
 
 import android.content.Context
+import com.lago.api.OkHttpInterceptor.createOkHttpInterceptor
+import com.lago.api.OkHttpInterceptor.createOkHttpNetworkInterceptor
 import dagger.Module
 import dagger.Provides
+import okhttp3.Cache
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -29,9 +32,9 @@ internal class ApiModule {
         fun provideOkHttpClient(
             context: Context
         ): OkHttpClient = OkHttpClient.Builder()
-            /*.cache(Cache(context.cacheDir, 1 * 1024 * 1024)) // 1 MB
+            .cache(Cache(context.cacheDir, 1 * 1024 * 1024)) // 1 MB
             .addInterceptor(createOkHttpInterceptor())
-            .addNetworkInterceptor(createOkHttpNetworkInterceptor())*/
+            .addNetworkInterceptor(createOkHttpNetworkInterceptor())
             .addNetworkDebuggingInterceptor()
             .build()
     }

@@ -42,7 +42,6 @@ class MovieViewHolder(private val view: ItemMovieBinding) : RecyclerView.ViewHol
             poster.load("https://image.tmdb.org/t/p/w185_and_h278_bestv2${item.posterPath}")
         }
     }
-
 }
 
 val movieDiff = object : DiffUtil.ItemCallback<Movie>() {
@@ -53,5 +52,4 @@ val movieDiff = object : DiffUtil.ItemCallback<Movie>() {
     override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean {
         return oldItem == newItem
     }
-
 }
