@@ -22,9 +22,11 @@ dependencies {
     implementation(Dep.Kotlin.stdlibJvm)
     implementation(Dep.Kotlin.coroutines)
 
+    implementation(Dep.AndroidX.appCompat)
     implementation(Dep.AndroidX.constraint)
     implementation(Dep.AndroidX.viewModelKtx)
     implementation(Dep.AndroidX.recyclerView)
+    implementation(Dep.AndroidX.liveDataKtx)
 
     implementation(Dep.AndroidX.Navigation.fragmentKtx)
 

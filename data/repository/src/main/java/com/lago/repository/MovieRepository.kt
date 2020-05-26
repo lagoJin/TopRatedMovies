@@ -2,7 +2,9 @@ package com.lago.repository
 
 import com.lago.api.MovieService
 import com.lago.model.IMovieRepository
+import com.lago.model.MovieDetail
 import com.lago.model.TopRatedMovies
+import com.lago.repository.mapper.toMovieDetail
 import com.lago.repository.mapper.toTopRatedMovies
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -14,5 +16,9 @@ internal class MovieRepository(
         return flow {
             emit(movieService.getTopRatedMovies().toTopRatedMovies())
         }
+    }
+
+    override fun getMovieDetail(movieId: Int): Flow<MovieDetail> {
+        return flow { emit(movieService.getMovieDetail(movieId = movieId).toMovieDetail()) }
     }
 }
