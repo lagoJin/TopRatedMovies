@@ -17,6 +17,7 @@ apply {
 dependencies {
     implementation(project(":core"))
     implementation(project(":data:repository"))
+    implementation(project(":widget"))
 
     implementation(Dep.Kotlin.stdlibJvm)
     implementation(Dep.Kotlin.coroutines)

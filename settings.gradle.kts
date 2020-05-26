@@ -4,7 +4,8 @@ include(
     ":data:api",
     ":data:repository",
     ":core",
-    ":model"
+    ":model",
+    ":widget"
 )
 
 rootProject.name = "exchange"

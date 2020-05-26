@@ -18,6 +18,8 @@ class HomeViewModel @AssistedInject constructor(
     val movies: LiveData<List<Movie>>
         get() = _movies
 
+    val barCode = MutableLiveData<String>()
+
     init {
         viewModelScope.launch {
             movieRepository.getMoviesTopRated().collect {

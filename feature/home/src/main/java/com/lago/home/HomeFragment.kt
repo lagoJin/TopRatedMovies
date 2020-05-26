@@ -1,9 +1,12 @@
 package com.lago.home
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.lago.core.extension.assistedViewModels
@@ -48,6 +51,12 @@ class HomeFragment : DaggerFragment() {
 
         viewModel.movies.observe(viewLifecycleOwner, Observer { movies ->
             movieAdapter.submitList(movies)
+        })
+
+        viewModel.barCode.observe(viewLifecycleOwner, Observer {
+            if (it.length == 4) {
+                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+            }
         })
 
         movieAdapter.setItemClickListener(object : MovieAdapter.ItemClickListener {
