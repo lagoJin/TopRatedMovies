@@ -6,8 +6,10 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
 }
 
-android.dataBinding.isEnabled = true
-android.viewBinding.isEnabled = true
+android.buildFeatures {
+    dataBinding = true
+    viewBinding = true
+}
 
 apply {
     from(rootProject.file("ktlint.gradle"))

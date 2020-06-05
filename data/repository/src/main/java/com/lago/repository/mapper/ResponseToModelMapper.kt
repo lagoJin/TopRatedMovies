@@ -96,4 +96,3 @@ internal fun SpokenLanguageResponse.toSpokenLanguage() = SpokenLanguage(
     iso6391,
     name
 )
-

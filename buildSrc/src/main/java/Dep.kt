@@ -24,7 +24,6 @@ object Dep {
             val dynamicFeaturesFragment =
                 "androidx.navigation:navigation-dynamic-features-fragment:$version"
             val args = "androidx.navigation:navigation-safe-args-gradle-plugin:$version"
-
         }
     }
 

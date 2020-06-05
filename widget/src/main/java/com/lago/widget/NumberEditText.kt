@@ -8,7 +8,9 @@ import android.view.ActionMode
 import androidx.appcompat.widget.AppCompatEditText
 
 class NumberEditText @JvmOverloads constructor(
-    context: Context, attributeSet: AttributeSet? = null, defStyleAtr: Int = 0
+    context: Context,
+    attributeSet: AttributeSet? = null,
+    defStyleAtr: Int = 0
 ) : AppCompatEditText(
     context, attributeSet, defStyleAtr
 ) {
@@ -93,6 +95,5 @@ class NumberEditText @JvmOverloads constructor(
                 charSize.toInt() + space.toInt()
             }
         }
-
     }
 }

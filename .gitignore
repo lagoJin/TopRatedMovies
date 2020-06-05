@@ -114,6 +114,7 @@ obj/
 .idea/kotlinScripting.xml
 .idea/runConfigurations.xml
 .idea/navEditor.xml
+.idea/jarRepositories.xml
 
 # OS-specific files
 .DS_Store

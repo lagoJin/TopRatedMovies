@@ -22,8 +22,8 @@ android {
         testInstrumentationRunnerArguments = mapOf("clearPackageData" to "true")
     }
 
-    dataBinding {
-        isEnabled = true
+    buildFeatures {
+        dataBinding = true
     }
 }
 

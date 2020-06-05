@@ -1,7 +1,6 @@
 package com.lago.api.response
 
 import com.google.gson.annotations.SerializedName
-import com.lago.model.Genre
 
 data class MovieDetailResponse(
     @SerializedName("adult")

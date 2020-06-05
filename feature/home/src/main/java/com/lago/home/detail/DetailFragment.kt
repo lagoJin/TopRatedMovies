@@ -14,7 +14,7 @@ class DetailFragment : DaggerFragment() {
 
     private lateinit var binding: DetailFragmentBinding
 
-    private val navArgs: DetailFragmentArgs by navArgs()
+    private val navArgs: DetailFragmentArgs by navArgs<DetailFragmentArgs>()
 
     @Inject
     lateinit var viewModelFactory: DetailViewModel.Factory
