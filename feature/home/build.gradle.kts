@@ -1,8 +1,9 @@
 plugins {
     id("com.android.library")
     kotlin("android")
+    kotlin("android.extensions")
     kotlin("kapt")
-    id("kotlin-android-extensions")
+    id("dagger.hilt.android.plugin")
     id("androidx.navigation.safeargs.kotlin")
 }
 
@@ -36,11 +37,11 @@ dependencies {
 
     implementation(Dep.Coil.coil)
 
-    implementation(Dep.Dagger.core)
-    implementation(Dep.Dagger.androidSupport)
-    implementation(Dep.Dagger.android)
-    kapt(Dep.Dagger.compiler)
-    kapt(Dep.Dagger.androidProcessor)
-    compileOnly(Dep.Dagger.assistedInjectAnnotations)
-    kapt(Dep.Dagger.assistedInjectProcessor)
+    implementation(Dep.Hilt.android)
+    implementation(Dep.Hilt.viewModel)
+    androidTestImplementation(Dep.Hilt.testing)
+    kapt(Dep.Hilt.compiler)
+    kapt(Dep.Hilt.androidCompiler)
+    kaptAndroidTest(Dep.Hilt.compiler)
+    kaptAndroidTest(Dep.Hilt.androidCompiler)
 }

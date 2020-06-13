@@ -1,8 +1,8 @@
 plugins {
     id("com.android.library")
     kotlin("android")
+    kotlin("android.extensions")
     kotlin("kapt")
-    id("kotlin-android-extensions")
 }
 
 apply {
@@ -18,7 +18,4 @@ dependencies {
     implementation(Dep.Kotlin.coroutines)
 
     implementation(Dep.AndroidX.design)
-
-    implementation(Dep.Dagger.core)
-    implementation(Dep.Dagger.androidSupport)
 }

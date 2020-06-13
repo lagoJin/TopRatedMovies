@@ -1,8 +1,8 @@
 plugins {
     id("com.android.library")
     kotlin("android")
+    kotlin("android.extensions")
     kotlin("kapt")
-    id("kotlin-android-extensions")
     id("androidx.navigation.safeargs.kotlin")
 }
 
@@ -23,8 +23,6 @@ dependencies {
     implementation(Dep.AndroidX.Navigation.fragmentKtx)
 
     implementation(Dep.Coil.coil)
-
-    implementation(Dep.Dagger.android)
 
     implementation(Dep.Util.timber)
 }

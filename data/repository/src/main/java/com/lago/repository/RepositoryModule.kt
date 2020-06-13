@@ -4,9 +4,12 @@ import com.lago.api.MovieService
 import com.lago.model.IMovieRepository
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 
-@Module(includes = [RepositoryModule.Providers::class])
-internal class RepositoryModule {
+@Module
+@InstallIn(ApplicationComponent::class)
+object RepositoryModule {
 
     @Provides
     fun exchangeRepository(
@@ -14,7 +17,4 @@ internal class RepositoryModule {
     ): IMovieRepository {
         return MovieRepository(movieService)
     }
-
-    @Module
-    internal object Providers
 }

@@ -1,21 +1,18 @@
 package com.lago.exchange
 
 import android.os.Bundle
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.lago.core.extension.assistedActivityViewModels
 import com.lago.exchange.databinding.ActivityMainBinding
-import dagger.android.support.DaggerAppCompatActivity
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : DaggerAppCompatActivity() {
+@AndroidEntryPoint
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    @Inject
-    lateinit var viewModelFactory: MainViewModel.Factory
-    private val viewModel: MainViewModel by assistedActivityViewModels {
-        viewModelFactory.create()
-    }
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +22,5 @@ class MainActivity : DaggerAppCompatActivity() {
             viewModel = this@MainActivity.viewModel
             lifecycleOwner = this@MainActivity
         }
-
-        // findNavController(R.id.nav_graph).navigate(R.id.action_main_to_home)
     }
 }

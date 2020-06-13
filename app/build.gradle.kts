@@ -1,13 +1,19 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    kotlin("android.extensions")
     kotlin("kapt")
-    id("kotlin-android-extensions")
+    id("dagger.hilt.android.plugin")
 }
 
 apply {
     from(rootProject.file("ktlint.gradle"))
     from(rootProject.file("gradle/android.gradle"))
+}
+
+android.buildFeatures {
+    dataBinding = true
+    viewBinding = true
 }
 
 android {
@@ -22,16 +28,22 @@ android {
         testInstrumentationRunnerArguments = mapOf("clearPackageData" to "true")
     }
 
-    buildFeatures {
-        dataBinding = true
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        val options = this as org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
+        options.jvmTarget = "1.8"
     }
 }
 
 dependencies {
-    implementation(project(":core"))
-    implementation(project(":feature:home"))
-    implementation(project(":data:api"))
-    implementation(project(":data:repository"))
+    api(project(":core"))
+    api(project(":feature:home"))
+    api(project(":data:api"))
+    api(project(":data:repository"))
 
     implementation(Dep.Kotlin.stdlibJvm)
     implementation(Dep.AndroidX.appCompat)
@@ -39,16 +51,18 @@ dependencies {
     implementation(Dep.AndroidX.constraint)
     implementation(Dep.AndroidX.activityKtx)
 
+    implementation(Dep.OkHttp.okhttp)
+
     implementation(Dep.AndroidX.Navigation.fragmentKtx)
     implementation(Dep.AndroidX.Navigation.dynamicFeaturesFragment)
 
     implementation(Dep.Util.timber)
 
-    implementation(Dep.Dagger.core)
-    implementation(Dep.Dagger.androidSupport)
-    implementation(Dep.Dagger.android)
-    kapt(Dep.Dagger.compiler)
-    kapt(Dep.Dagger.androidProcessor)
-    compileOnly(Dep.Dagger.assistedInjectAnnotations)
-    kapt(Dep.Dagger.assistedInjectProcessor)
+    implementation(Dep.Hilt.android)
+    implementation(Dep.Hilt.viewModel)
+    androidTestImplementation(Dep.Hilt.testing)
+    kapt(Dep.Hilt.compiler)
+    kapt(Dep.Hilt.androidCompiler)
+    kaptAndroidTest(Dep.Hilt.compiler)
+    kaptAndroidTest(Dep.Hilt.androidCompiler)
 }

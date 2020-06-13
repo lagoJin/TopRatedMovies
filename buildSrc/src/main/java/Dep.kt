@@ -32,14 +32,12 @@ object Dep {
 
         val retrofit = "com.squareup.retrofit2:retrofit:$version"
         val gson = "com.squareup.retrofit2:converter-gson:$version"
-
     }
 
     object OkHttp {
-        private val version = "4.6.0"
+        private val version = "4.7.2"
         val okhttp = "com.squareup.okhttp3:okhttp:$version"
         val interceptor = "com.squareup.okhttp3:logging-interceptor:$version"
-
     }
 
     object Threetenabp {
@@ -54,16 +52,13 @@ object Dep {
         val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     }
 
-    object Dagger {
-        private val version = "2.27"
-        val android = "com.google.dagger:dagger-android:$version"
-        val androidSupport = "com.google.dagger:dagger-android-support:$version"
-        val core = "com.google.dagger:dagger:$version"
-        val compiler = "com.google.dagger:dagger-compiler:$version"
-        val androidProcessor = "com.google.dagger:dagger-android-processor:$version"
-        val assistedInjectAnnotations =
-            "com.squareup.inject:assisted-inject-annotations-dagger2:0.5.2"
-        val assistedInjectProcessor = "com.squareup.inject:assisted-inject-processor-dagger2:0.5.2"
+    object Hilt {
+        private val version = "2.28-alpha"
+        val android = "com.google.dagger:hilt-android:$version"
+        val viewModel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01"
+        val androidCompiler = "androidx.hilt:hilt-compiler:1.0.0-alpha01"
+        val compiler = "com.google.dagger:hilt-android-compiler:$version"
+        val testing = "com.google.dagger:hilt-android-testing:$version"
     }
 
     object Coil {

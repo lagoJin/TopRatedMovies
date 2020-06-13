@@ -4,23 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
-import com.lago.core.extension.assistedViewModels
 import com.lago.home.databinding.DetailFragmentBinding
-import dagger.android.support.DaggerFragment
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 
-class DetailFragment : DaggerFragment() {
+@AndroidEntryPoint
+class DetailFragment : Fragment() {
 
     private lateinit var binding: DetailFragmentBinding
 
-    private val navArgs: DetailFragmentArgs by navArgs<DetailFragmentArgs>()
+    private val args: DetailFragmentArgs by navArgs<DetailFragmentArgs>()
 
-    @Inject
-    lateinit var viewModelFactory: DetailViewModel.Factory
-    private val viewModel: DetailViewModel by assistedViewModels {
-        viewModelFactory.create(navArgs.movie)
-    }
+    private val viewModel by viewModels<DetailViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,5 +35,7 @@ class DetailFragment : DaggerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel.initMovieDetail(args.movie)
     }
 }

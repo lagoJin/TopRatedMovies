@@ -1,21 +1,13 @@
 package com.lago.exchange
 
-import com.lago.exchange.di.createAppComponent
-import dagger.android.AndroidInjector
-import dagger.android.support.DaggerApplication
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-class ExchangeApplication : DaggerApplication() {
-
-    private val applicationComponent by lazy {
-        createAppComponent()
-    }
+@HiltAndroidApp
+class ExchangeApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
         BuildType.init()
-    }
-
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        return applicationComponent
     }
 }

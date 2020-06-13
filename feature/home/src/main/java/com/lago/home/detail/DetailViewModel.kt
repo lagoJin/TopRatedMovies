@@ -1,25 +1,29 @@
 package com.lago.home.detail
 
+import androidx.hilt.Assisted
+import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.lago.model.IMovieRepository
-import com.squareup.inject.assisted.Assisted
-import com.squareup.inject.assisted.AssistedInject
+import com.lago.model.MovieDetail
+import kotlinx.coroutines.flow.single
+import kotlinx.coroutines.launch
 
-class DetailViewModel @AssistedInject constructor(
-    @Assisted val movieId: Int,
-    repository: IMovieRepository
+class DetailViewModel @ViewModelInject constructor(
+    private val repository: IMovieRepository,
+    @Assisted private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-    val movieDetail = repository.getMovieDetail(movieId).asLiveData(viewModelScope.coroutineContext)
+    private val _movieDetail = MutableLiveData<MovieDetail>()
+    val movieDetail: LiveData<MovieDetail>
+        get() = _movieDetail
 
-    init {
-        repository.getMovieDetail(movieId)
-    }
-
-    @AssistedInject.Factory
-    interface Factory {
-        fun create(movieId: Int): DetailViewModel
+    fun initMovieDetail(movieId: Int) {
+        viewModelScope.launch {
+            _movieDetail.value = repository.getMovieDetail(movieId).single()
+        }
     }
 }

@@ -1,8 +1,9 @@
 plugins {
     id("com.android.library")
     kotlin("android")
+    kotlin("android.extensions")
     kotlin("kapt")
-    id("kotlin-android-extensions")
+    id("dagger.hilt.android.plugin")
 }
 
 apply {
@@ -21,8 +22,9 @@ dependencies {
     implementation(Dep.OkHttp.okhttp)
     implementation(Dep.OkHttp.interceptor)
 
-    implementation(Dep.Dagger.core)
-    implementation(Dep.Dagger.androidSupport)
-    kapt(Dep.Dagger.compiler)
-    kapt(Dep.Dagger.androidProcessor)
+    implementation(Dep.Hilt.android)
+    androidTestImplementation(Dep.Hilt.testing)
+    kapt(Dep.Hilt.compiler)
+    kaptAndroidTest(Dep.Hilt.compiler)
+    kaptAndroidTest(Dep.Hilt.androidCompiler)
 }

@@ -1,16 +1,16 @@
 package com.lago.home
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.lago.model.IMovieRepository
 import com.lago.model.Movie
-import com.squareup.inject.assisted.AssistedInject
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-class HomeViewModel @AssistedInject constructor(
+class HomeViewModel @ViewModelInject constructor(
     private val movieRepository: IMovieRepository
 ) : ViewModel() {
 
@@ -18,18 +18,11 @@ class HomeViewModel @AssistedInject constructor(
     val movies: LiveData<List<Movie>>
         get() = _movies
 
-    val barCode = MutableLiveData<String>()
-
     init {
         viewModelScope.launch {
             movieRepository.getMoviesTopRated().collect {
                 _movies.value = it.results
             }
         }
-    }
-
-    @AssistedInject.Factory
-    interface Factory {
-        fun create(): HomeViewModel
     }
 }
