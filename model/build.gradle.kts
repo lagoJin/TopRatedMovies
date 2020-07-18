@@ -17,4 +17,7 @@ androidExtensions {
 dependencies {
     implementation(Dep.Kotlin.stdlibJvm)
     implementation(Dep.Kotlin.coroutines)
+
+    implementation(Dep.AndroidX.Paging.runtime)
+    testImplementation(Dep.AndroidX.Paging.test)
 }

@@ -28,7 +28,7 @@ class ApiModule {
         .build()
 
     @Provides
-    fun provideExchangeApiService(
+    fun provideMovieApiService(
         okHttpClient: OkHttpClient
     ): MovieService {
         return Retrofit.Builder()

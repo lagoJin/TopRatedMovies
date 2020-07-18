@@ -25,6 +25,12 @@ object Dep {
                 "androidx.navigation:navigation-dynamic-features-fragment:$version"
             val args = "androidx.navigation:navigation-safe-args-gradle-plugin:$version"
         }
+
+        object Paging {
+            private val version = "3.0.0-alpha01"
+            val runtime = "androidx.paging:paging-runtime:$version"
+            val test = "androidx.paging:paging-common:$version"
+        }
     }
 
     object Retrofit {

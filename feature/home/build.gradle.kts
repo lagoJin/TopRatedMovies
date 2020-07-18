@@ -25,6 +25,9 @@ dependencies {
     implementation(Dep.Kotlin.stdlibJvm)
     implementation(Dep.Kotlin.coroutines)
 
+    implementation(Dep.AndroidX.Paging.runtime)
+    testImplementation(Dep.AndroidX.Paging.test)
+
     implementation(Dep.AndroidX.appCompat)
     implementation(Dep.AndroidX.constraint)
     implementation(Dep.AndroidX.viewModelKtx)

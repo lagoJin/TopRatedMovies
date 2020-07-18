@@ -20,7 +20,11 @@ dependencies {
     implementation(Dep.AndroidX.activityKtx)
     implementation(Dep.AndroidX.fragmentKtx)
 
+    implementation(Dep.AndroidX.Paging.runtime)
+    testImplementation(Dep.AndroidX.Paging.test)
+
     implementation(Dep.AndroidX.Navigation.fragmentKtx)
+    implementation(Dep.AndroidX.Navigation.uiKtx)
 
     implementation(Dep.Coil.coil)
 

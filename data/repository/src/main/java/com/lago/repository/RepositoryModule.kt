@@ -12,7 +12,7 @@ import dagger.hilt.android.components.ApplicationComponent
 object RepositoryModule {
 
     @Provides
-    fun exchangeRepository(
+    fun movieRepository(
         movieService: MovieService
     ): IMovieRepository {
         return MovieRepository(movieService)

@@ -51,6 +51,9 @@ dependencies {
     implementation(Dep.AndroidX.constraint)
     implementation(Dep.AndroidX.activityKtx)
 
+    implementation(Dep.AndroidX.Paging.runtime)
+    testImplementation(Dep.AndroidX.Paging.test)
+
     implementation(Dep.OkHttp.okhttp)
 
     implementation(Dep.AndroidX.Navigation.fragmentKtx)

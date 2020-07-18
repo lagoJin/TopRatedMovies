@@ -18,6 +18,11 @@ dependencies {
 
     implementation(Dep.Kotlin.stdlibJvm)
     implementation(Dep.Kotlin.coroutines)
+    implementation(Dep.OkHttp.okhttp)
+    implementation(Dep.Retrofit.retrofit)
+
+    implementation(Dep.AndroidX.Paging.runtime)
+    testImplementation(Dep.AndroidX.Paging.test)
 
     implementation(Dep.Hilt.android)
     androidTestImplementation(Dep.Hilt.testing)
