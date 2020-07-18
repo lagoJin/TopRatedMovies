@@ -17,14 +17,14 @@ data class MovieDetail(
     val productionCompanies: List<ProductionCompany>,
     val productionCountries: List<ProductionCountry>,
     val releaseDate: String,
-    val revenue: Int,
+    val revenue: Long,
     val runtime: Int,
     val spokenLanguages: List<SpokenLanguage>,
     val status: String,
     val tagline: String,
     val title: String,
     val video: Boolean,
-    val voteAverage: Double,
+    val voteAverage: Float,
     val voteCount: Int
 )
 

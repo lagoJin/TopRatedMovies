@@ -67,7 +67,7 @@ internal fun MovieDetailResponse.toMovieDetail() = MovieDetail(
     tagline,
     title,
     video,
-    voteAverage,
+    voteAverage.toFloat(),
     voteCount
 )
 

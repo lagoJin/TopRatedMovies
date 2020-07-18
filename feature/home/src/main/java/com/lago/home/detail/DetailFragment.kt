@@ -15,7 +15,7 @@ class DetailFragment : Fragment() {
 
     private lateinit var binding: DetailFragmentBinding
 
-    private val args: DetailFragmentArgs by navArgs<DetailFragmentArgs>()
+    private val args: DetailFragmentArgs by navArgs()
 
     private val viewModel by viewModels<DetailViewModel>()
 

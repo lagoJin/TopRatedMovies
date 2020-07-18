@@ -4,7 +4,6 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.lago.api.MovieService
-import com.lago.api.response.MovieResponse
 import com.lago.model.IMovieRepository
 import com.lago.model.Movie
 import com.lago.model.MovieDetail
@@ -31,7 +30,7 @@ internal class MovieRepository(
         return Pager(
             config = PagingConfig(
                 pageSize = 113,
-                enablePlaceholders = false
+                enablePlaceholders = true
             ),
             pagingSourceFactory = { MoviePagingSource(movieService) }
         ).flow
