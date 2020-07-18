@@ -33,6 +33,8 @@ dependencies {
     implementation(Dep.AndroidX.viewModelKtx)
     implementation(Dep.AndroidX.recyclerView)
     implementation(Dep.AndroidX.liveDataKtx)
+    implementation(Dep.AndroidX.design)
+    implementation(Dep.AndroidX.coordinatorLayout)
 
     implementation(Dep.AndroidX.Navigation.fragmentKtx)
 

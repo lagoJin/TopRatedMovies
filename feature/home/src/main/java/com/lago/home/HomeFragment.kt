@@ -1,6 +1,7 @@
 package com.lago.home
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,12 +21,13 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private lateinit var binding: HomeFragmentBinding
-    private lateinit var movieAdapter: MovieAdapter
+    private val movieAdapter: MovieAdapter by lazy { MovieAdapter() }
 
     private val viewModel by viewModels<HomeViewModel>()
 
@@ -42,25 +44,10 @@ class HomeFragment : Fragment() {
             viewModel = this@HomeFragment.viewModel
         }
 
-        movieAdapter = MovieAdapter()
-
-        binding.recyclerView.apply {
-            adapter = movieAdapter
-            setHasFixedSize(true)
-        }
-
-        search()
-        lifecycleScope.launch {
-            @OptIn(ExperimentalPagingApi::class)
-            movieAdapter.dataRefreshFlow.collect {
-                binding.recyclerView.scrollToPosition(0)
-            }
-        }
-
         return binding.root
     }
 
-    fun search() {
+    private fun search() {
         searchJob?.cancel()
         searchJob = lifecycleScope.launch {
             viewModel.searchRepo().collectLatest {
@@ -72,9 +59,18 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /*viewModel.movies.observe(viewLifecycleOwner, Observer { movies ->
-            movieAdapter.submitList(movies)
-        })*/
+        binding.recyclerView.apply {
+            adapter = movieAdapter
+            setHasFixedSize(true)
+        }
+
+        savedInstanceState?.let {
+            binding.recyclerView.layoutManager?.onRestoreInstanceState(
+                savedInstanceState.getParcelable(RECYCLERVIEW_KEY)
+            )
+        } ?: run {
+            search()
+        }
 
         movieAdapter.setItemClickListener(object : MovieAdapter.ItemClickListener {
             override fun onClick(view: View, movieId: Int) {
@@ -84,5 +80,22 @@ class HomeFragment : Fragment() {
                 )
             }
         })
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelable(
+            RECYCLERVIEW_KEY,
+            binding.recyclerView.layoutManager?.onSaveInstanceState()
+        )
+    }
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        Timber.tag("test").v(savedInstanceState.toString())
+    }
+
+    companion object {
+        const val RECYCLERVIEW_KEY = "RECYCLERVIEW_KEY"
     }
 }

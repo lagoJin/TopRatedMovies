@@ -10,6 +10,7 @@ object Dep {
         val preference = "androidx.preference:preference:1.1.0"
         val activityKtx = "androidx.activity:activity-ktx:1.1.0"
         val fragmentKtx = "androidx.fragment:fragment-ktx:1.2.2"
+        val coordinatorLayout = "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
 
         val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata:2.2.0"
         val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-beta01"
