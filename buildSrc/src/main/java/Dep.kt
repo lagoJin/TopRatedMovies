@@ -18,7 +18,7 @@ object Dep {
         val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
 
         object Navigation {
-            private val version = "2.3.0-alpha03"
+            val version = "2.3.0-alpha03"
             val runtimeKtx = "androidx.navigation:navigation-runtime-ktx:$version"
             val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:$version"
             val uiKtx = "androidx.navigation:navigation-ui-ktx:2.3.0-alpha03"
@@ -53,7 +53,7 @@ object Dep {
     }
 
     object Kotlin {
-        private val version = "1.3.72"
+        val version = "1.3.72"
         val stdlibJvm = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version"
         val coroutinesVersion = "1.3.5"
         val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
@@ -76,5 +76,10 @@ object Dep {
     object Util {
         private val version = "4.7.1"
         val timber = "com.jakewharton.timber:timber:$version"
+    }
+
+    object Junit {
+        private val version = "4.13"
+        val junit = "junit:junit:$version"
     }
 }

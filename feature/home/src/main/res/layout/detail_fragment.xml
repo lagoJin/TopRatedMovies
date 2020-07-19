@@ -42,19 +42,32 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:title="@{viewModel.movieDetail.title}" />
 
+            <ImageView
+                android:id="@+id/poster"
+                android:layout_width="@dimen/constraint_match"
+                android:layout_height="360dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="20dp"
+                android:scaleType="fitXY"
+                android:transitionName="@{Integer.toString(viewModel.movieDetail.id)}"
+                app:layout_constraintEnd_toStartOf="@id/guide_end"
+                app:layout_constraintStart_toEndOf="@id/guide_start"
+                app:layout_constraintTop_toBottomOf="@id/toolbar"
+                app:srcCoil="@{viewModel.movieDetail.posterPath}" />
+
             <TextView
                 android:id="@+id/tageline"
                 android:layout_width="@dimen/constraint_match"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:fontFamily="@font/noto_sans"
-                android:lineSpacingExtra="2dp"
                 android:text="@{viewModel.movieDetail.tagline}"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@id/rating_bar"
                 app:layout_constraintStart_toEndOf="@id/guide_start"
-                app:layout_constraintTop_toBottomOf="@id/toolbar" />
+                app:layout_constraintTop_toBottomOf="@id/poster" />
 
             <RatingBar
                 android:id="@+id/rating_bar"
@@ -68,7 +81,7 @@
                 android:rating="@{viewModel.movieDetail.voteAverage}"
                 android:stepSize="0.5"
                 app:layout_constraintEnd_toStartOf="@id/guide_end"
-                app:layout_constraintTop_toBottomOf="@id/toolbar" />
+                app:layout_constraintTop_toBottomOf="@id/poster" />
 
             <TextView
                 android:id="@+id/date"
@@ -76,41 +89,26 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:fontFamily="@font/noto_sans"
-                android:lineSpacingExtra="2dp"
                 android:text="@{viewModel.movieDetail.releaseDate}"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toStartOf="@id/guide_end"
                 app:layout_constraintTop_toBottomOf="@id/rating_bar" />
 
-            <ImageView
-                android:id="@+id/poster"
-                android:layout_width="@dimen/constraint_match"
-                android:layout_height="360dp"
-                android:layout_marginHorizontal="12dp"
-                android:layout_marginTop="30dp"
-                android:scaleType="fitXY"
-                android:transitionName="@{Integer.toString(viewModel.movieDetail.id)}"
-                app:layout_constraintEnd_toStartOf="@id/guide_end"
-                app:layout_constraintStart_toEndOf="@id/guide_start"
-                app:layout_constraintTop_toBottomOf="@id/tageline"
-                app:srcCoil="@{viewModel.movieDetail.posterPath}" />
-
             <TextView
                 android:layout_width="@dimen/constraint_match"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginBottom="12dp"
                 android:fontFamily="@font/noto_sans"
-                android:lineSpacingExtra="2dp"
                 android:text="@{viewModel.movieDetail.overview}"
                 android:textColor="@color/black"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/guide_end"
                 app:layout_constraintStart_toEndOf="@id/guide_start"
-                app:layout_constraintTop_toBottomOf="@id/poster" />
+                app:layout_constraintTop_toBottomOf="@id/tageline" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
