@@ -6,7 +6,7 @@ data class MovieDetail(
     val belongsToCollection: BelongsToCollection? = null,
     val budget: Int,
     val genres: List<Genre>,
-    val homepage: String,
+    val homepage: String?,
     val id: Int,
     val imdbId: String,
     val originalLanguage: String,

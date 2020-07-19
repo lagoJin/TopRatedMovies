@@ -90,6 +90,7 @@
                 android:layout_marginHorizontal="12dp"
                 android:layout_marginTop="30dp"
                 android:scaleType="fitXY"
+                android:transitionName="@{Integer.toString(viewModel.movieDetail.id)}"
                 app:layout_constraintEnd_toStartOf="@id/guide_end"
                 app:layout_constraintStart_toEndOf="@id/guide_start"
                 app:layout_constraintTop_toBottomOf="@id/tageline"

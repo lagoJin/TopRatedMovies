@@ -5,7 +5,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
 import com.lago.home.databinding.ItemMovieBinding
@@ -33,14 +32,16 @@ class MovieAdapter : PagingDataAdapter<Movie, MovieViewHolder>(movieDiff) {
     }
 }
 
-class MovieViewHolder(private val view: ItemMovieBinding) : RecyclerView.ViewHolder(view.root) {
+class MovieViewHolder(val view: ItemMovieBinding) : RecyclerView.ViewHolder(view.root) {
     fun bind(item: Movie?, itemClickListener: MovieAdapter.ItemClickListener) {
+        view.root.setTag(R.id.tag_movie_id, item!!.id)
         view.apply {
             layout.setOnClickListener {
-                itemClickListener.onClick(layout, item!!.id)
+                itemClickListener.onClick(layout, item.id)
             }
-            title.text = item!!.title
-            poster.load("https://image.tmdb.org/t/p/w185_and_h278_bestv2${item.posterPath}")
+            title.text = item.title
+            itemPoster.load("https://image.tmdb.org/t/p/w185_and_h278_bestv2${item.posterPath}")
+            itemPoster.transitionName = item.id.toString()
         }
     }
 }

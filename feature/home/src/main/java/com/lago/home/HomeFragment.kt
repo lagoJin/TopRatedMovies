@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.forEach
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.paging.ExperimentalPagingApi
-import com.lago.core.options
+import androidx.transition.TransitionInflater
 import com.lago.core.util.EventObserver
 import com.lago.home.databinding.HomeFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -17,6 +19,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import java.util.concurrent.TimeUnit
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -38,6 +41,10 @@ class HomeFragment : Fragment() {
             lifecycleOwner = viewLifecycleOwner
             viewModel = this@HomeFragment.viewModel
         }
+        sharedElementReturnTransition =
+            TransitionInflater.from(context).inflateTransition(R.transition.detail_shared_enter)
+
+        postponeEnterTransition(300L, TimeUnit.MILLISECONDS)
 
         return binding.root
     }
@@ -61,10 +68,14 @@ class HomeFragment : Fragment() {
 
         movieAdapter.setItemClickListener(object : MovieAdapter.ItemClickListener {
             override fun onClick(view: View, movieId: Int) {
-                findNavController().navigate(
-                    HomeFragmentDirections.actionToDetail(movieId),
-                    options
+                val sharedElement = findPosterImage(
+                    binding.recyclerView,
+                    movieId
                 )
+                val extras = FragmentNavigatorExtras(
+                    sharedElement to sharedElement.transitionName
+                )
+                findNavController().navigate(HomeFragmentDirections.actionToDetail(movieId), extras)
             }
         })
 
@@ -78,6 +89,15 @@ class HomeFragment : Fragment() {
                     }
                 }
             })
+    }
+
+    private fun findPosterImage(posters: ViewGroup, movieId: Int): View {
+        posters.forEach {
+            if (it.getTag(R.id.tag_movie_id) == movieId) {
+                return it.findViewById(R.id.item_poster)
+            }
+        }
+        return posters
     }
 
     companion object {

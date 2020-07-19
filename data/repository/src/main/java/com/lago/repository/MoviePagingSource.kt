@@ -2,7 +2,6 @@ package com.lago.repository
 
 import androidx.paging.PagingSource
 import com.lago.api.MovieService
-import com.lago.api.response.MovieResponse
 import com.lago.model.Movie
 import com.lago.repository.mapper.toTopRatedMovies
 import retrofit2.HttpException
