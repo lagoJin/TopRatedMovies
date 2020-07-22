@@ -95,18 +95,15 @@ class HomeFragment : Fragment() {
             }
         })
 
-        viewModel.init.observe(
-            viewLifecycleOwner,
-            EventObserver {
-                search()
-                lifecycleScope.launch {
-                    @OptIn(ExperimentalPagingApi::class)
-                    movieAdapter.dataRefreshFlow.collect {
-                        binding.recyclerView.scrollToPosition(0)
-                    }
+        viewModel.init.observe(viewLifecycleOwner, EventObserver {
+            search()
+            lifecycleScope.launch {
+                @OptIn(ExperimentalPagingApi::class)
+                movieAdapter.dataRefreshFlow.collect {
+                    binding.recyclerView.scrollToPosition(0)
                 }
             }
-        )
+        })
     }
 
     private fun findPosterImage(posters: ViewGroup, movieId: Int): View {
@@ -116,9 +113,5 @@ class HomeFragment : Fragment() {
             }
         }
         return posters
-    }
-
-    companion object {
-        const val RECYCLERVIEW_KEY = "RECYCLERVIEW_KEY"
     }
 }
