@@ -12,7 +12,6 @@ Fetch data from  the network via repositoryy pattern.
 
 <br>
 <img src="https://github.com/lagoJin/TopRatedMovies/blob/develop/previews/preview.gif" align="right" width="30%"></img>
-<br>
 
 ##  👉 Stack & Libraries 
 
