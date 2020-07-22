@@ -10,7 +10,6 @@ Fetch data from  the network via repositoryy pattern.
 <img alt="license" src="https://img.shields.io/github/license/hongbeomi/FindTaek?color=blue&logo=apache"/>
 </p>
 
-<br>
 <img src="https://github.com/lagoJin/TopRatedMovies/blob/develop/previews/preview.gif" align="right" width="30%"></img>
 
 ##  👉 Stack & Libraries 
