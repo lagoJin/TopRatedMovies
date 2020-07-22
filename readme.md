@@ -3,6 +3,7 @@
 Top Rated Movies is sample based on MVVM architecture.
 This is proejct for focusing on the new library Paging3 of implementation paging library.
 Fetch data from  the network via repositoryy pattern.
+</p>
 
 <p align="center">
 <img alt="api" src="https://img.shields.io/badge/API-23%2B-green?logo=android"/>
@@ -10,9 +11,9 @@ Fetch data from  the network via repositoryy pattern.
 </p>
 
 <br>
-<br>
 <img src="https://github.com/lagoJin/TopRatedMovies/blob/develop/previews/preview.gif" align="right" width="30%"></img>
 <br>
+
 ##  👉 Stack & Libraries 
 
 - Minimum SDK level 23
