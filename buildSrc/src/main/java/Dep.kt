@@ -6,10 +6,10 @@ object Dep {
         val recyclerView = "androidx.recyclerview:recyclerview:1.1.0"
         val constraint = "androidx.constraintlayout:constraintlayout:2.0.0-beta4"
         val design = "com.google.android.material:material:1.2.0-alpha05"
-        val coreKtx = "androidx.core:core-ktx:1.2.0-rc01"
+        val coreKtx = "androidx.core:core-ktx:1.3.1"
         val preference = "androidx.preference:preference:1.1.0"
         val activityKtx = "androidx.activity:activity-ktx:1.1.0"
-        val fragmentKtx = "androidx.fragment:fragment-ktx:1.2.2"
+        val fragmentKtx = "androidx.fragment:fragment-ktx:1.2.5"
         val coordinatorLayout = "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
 
         val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata:2.2.0"
@@ -21,7 +21,7 @@ object Dep {
             val version = "2.3.0"
             val runtimeKtx = "androidx.navigation:navigation-runtime-ktx:$version"
             val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:$version"
-            val uiKtx = "androidx.navigation:navigation-ui-ktx:2.3.0-alpha03"
+            val uiKtx = "androidx.navigation:navigation-ui-ktx:${version}"
             val dynamicFeaturesFragment =
                 "androidx.navigation:navigation-dynamic-features-fragment:$version"
             val args = "androidx.navigation:navigation-safe-args-gradle-plugin:$version"
@@ -35,14 +35,14 @@ object Dep {
     }
 
     object Retrofit {
-        private val version = "2.8.1"
+        private val version = "2.9.0"
 
         val retrofit = "com.squareup.retrofit2:retrofit:$version"
         val gson = "com.squareup.retrofit2:converter-gson:$version"
     }
 
     object OkHttp {
-        private val version = "4.7.2"
+        private val version = "4.8.0"
         val okhttp = "com.squareup.okhttp3:okhttp:$version"
         val interceptor = "com.squareup.okhttp3:logging-interceptor:$version"
     }

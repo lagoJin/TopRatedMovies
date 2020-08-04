@@ -20,6 +20,7 @@ plugins {
     kotlin("android.extensions")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
+    id("name.remal.check-updates") version "1.0.209"
 }
 
 apply {

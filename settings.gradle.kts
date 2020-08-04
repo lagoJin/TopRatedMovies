@@ -1,3 +1,5 @@
+rootProject.name = "TopRatedMovies"
+
 include(
     ":app",
     ":feature:home",
@@ -7,5 +9,3 @@ include(
     ":model",
     ":widget"
 )
-
-rootProject.name = "TopRatedMovies"

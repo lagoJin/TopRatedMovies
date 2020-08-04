@@ -20,6 +20,7 @@ plugins {
     kotlin("android.extensions")
     kotlin("kapt")
     id("androidx.navigation.safeargs.kotlin")
+    id("name.remal.check-updates") version "1.0.209"
 }
 
 android.buildFeatures.dataBinding = true

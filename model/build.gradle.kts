@@ -19,6 +19,7 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id("kotlin-android-extensions")
+    id("name.remal.check-updates") version "1.0.209"
 }
 
 apply {
