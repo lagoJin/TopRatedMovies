@@ -8,4 +8,4 @@ include(
     ":widget"
 )
 
-rootProject.name = "exchange"
+rootProject.name = "TopRatedMovies"
