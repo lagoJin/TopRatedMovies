@@ -1,8 +1,8 @@
 # <p align="center">Top Rated Movies</p>
 
 Top Rated Movies is sample based on MVVM architecture.
-This is proejct for focusing on the new library Paging3 of implementation paging library.
-Fetch data from  the network via repositoryy pattern.
+This is project for focusing on the new library Paging3 of implementation paging library.
+Fetch data from the network via repository pattern.
 </p>
 
 <p align="center">
@@ -20,7 +20,7 @@ Fetch data from  the network via repositoryy pattern.
 - JetPack
   - Paging3 - RecyclerView paging class.
   - Navigation - Navigation view, all views Previews.
-  - LiveData - Bbservable data holder class.
+  - LiveData - Observable data holder class.
   - Lifecycle - Create a UI that automatically responds to lifecycle events.
   - ViewModel - UI related data holder, Easily schedule asynchronous tasks for optimal execution.
 
@@ -43,6 +43,15 @@ Fetch data from  the network via repositoryy pattern.
 
 Support it by joining [stargazers](https://github.com/lagoJin/TopRatedMovies/stargazers) for this repository
 
+Library VersionCheck
+```
+Mac
+./gradlew checkDependencyUpdates
+```
+
+```
+/gradlew checkDependencyUpdates
+```
 <br>
 
 ## 📃 License
