@@ -19,8 +19,6 @@ package com.lago.home
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -28,7 +26,7 @@ import coil.api.load
 import com.lago.home.databinding.ItemMovieBinding
 import com.lago.model.Movie
 
-class MovieAdapter : PagingDataAdapter<Movie, MovieViewHolder>(movieDiff), Filterable {
+class MovieAdapter : PagingDataAdapter<Movie, MovieViewHolder>(movieDiff){
 
     private lateinit var itemClickListener: ItemClickListener
 
@@ -47,18 +45,6 @@ class MovieAdapter : PagingDataAdapter<Movie, MovieViewHolder>(movieDiff), Filte
 
     interface ItemClickListener {
         fun onClick(view: View, movieId: Int)
-    }
-
-    override fun getFilter(): Filter {
-        return object :Filter(){
-            override fun performFiltering(constraint: CharSequence?): FilterResults {
-                TODO("Not yet implemented")
-            }
-
-            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-                TODO("Not yet implemented")
-            }
-        }
     }
 }
 
