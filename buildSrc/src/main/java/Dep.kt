@@ -1,16 +1,13 @@
 object Dep {
 
     object AndroidX {
-        val jetifier = "com.android.tools.build.jetifier:jetifier-core:1.0.0-beta02"
-        val appCompat = "androidx.appcompat:appcompat:1.1.0"
+        val appCompat = "androidx.appcompat:appcompat:1.2.0"
         val recyclerView = "androidx.recyclerview:recyclerview:1.1.0"
         val constraint = "androidx.constraintlayout:constraintlayout:2.0.0-beta4"
-        val design = "com.google.android.material:material:1.2.0-alpha05"
+        val design = "com.google.android.material:material:1.2.0"
         val coreKtx = "androidx.core:core-ktx:1.3.1"
-        val preference = "androidx.preference:preference:1.1.0"
         val activityKtx = "androidx.activity:activity-ktx:1.1.0"
         val fragmentKtx = "androidx.fragment:fragment-ktx:1.2.5"
-        val coordinatorLayout = "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
 
         val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata:2.2.0"
         val viewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-beta01"
@@ -42,7 +39,7 @@ object Dep {
     }
 
     object OkHttp {
-        private val version = "4.8.0"
+        private val version = "4.8.1"
         val okhttp = "com.squareup.okhttp3:okhttp:$version"
         val interceptor = "com.squareup.okhttp3:logging-interceptor:$version"
     }
@@ -53,9 +50,9 @@ object Dep {
     }
 
     object Kotlin {
-        val version = "1.3.72"
+        val version = "1.4.0"
         val stdlibJvm = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version"
-        val coroutinesVersion = "1.3.5"
+        val coroutinesVersion = "1.3.9"
         val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     }
 
