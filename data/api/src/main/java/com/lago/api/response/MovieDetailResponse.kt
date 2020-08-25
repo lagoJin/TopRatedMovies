@@ -79,7 +79,7 @@ data class BelongsToCollectionResponse(
     @SerializedName("name")
     val name: String,
     @SerializedName("poster_path")
-    val posterPath: String
+    val posterPath: String? = ""
 )
 
 data class GenreResponse(
