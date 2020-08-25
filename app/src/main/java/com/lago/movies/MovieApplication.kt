@@ -14,28 +14,16 @@
  * limitations under the License.
  */
 
-package com.lago.exchange
+package com.lago.movies
 
-import android.os.StrictMode
-import timber.log.Timber
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-object BuildType {
+@HiltAndroidApp
+class MovieApplication : Application() {
 
-    fun init() {
-        Timber.plant(Timber.DebugTree())
-
-        StrictMode.setThreadPolicy(
-            StrictMode.ThreadPolicy.Builder()
-                .detectAll()
-                .penaltyLog()
-                .build()
-        )
-
-        StrictMode.setVmPolicy(
-            StrictMode.VmPolicy.Builder()
-                .detectAll()
-                .penaltyLog()
-                .build()
-        )
+    override fun onCreate() {
+        super.onCreate()
+        BuildType.init()
     }
 }

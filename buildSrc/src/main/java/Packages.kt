@@ -1,5 +1,5 @@
 object Packages {
 
-    const val name = "com.lago.exchange"
+    const val name = "com.lago.movies"
 
 }

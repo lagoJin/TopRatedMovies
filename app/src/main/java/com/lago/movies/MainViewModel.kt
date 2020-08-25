@@ -14,13 +14,9 @@
  * limitations under the License.
  */
 
-package com.lago.exchange.di
+package com.lago.movies
 
-import android.app.Application
-import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
+import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.ViewModel
 
-@Module
-@InstallIn(ApplicationComponent::class)
-class ApplicationModule : Application()
+class MainViewModel @ViewModelInject constructor() : ViewModel()
