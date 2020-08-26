@@ -115,6 +115,7 @@ obj/
 .idea/runConfigurations.xml
 .idea/navEditor.xml
 .idea/jarRepositories.xml
+.idea/sqlandroid.xml
 
 # OS-specific files
 .DS_Store
