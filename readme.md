@@ -45,14 +45,15 @@ Support it by joining [stargazers](https://github.com/lagoJin/TopRatedMovies/sta
 
 Library VersionCheck
 ```
-Mac
 ./gradlew checkDependencyUpdates
 ```
+Kotlin CodeCheck
+```
+./gradlew detekt
+```
 
-```
-/gradlew checkDependencyUpdates
-```
 <br>
+
 
 ## 📃 License
 
