@@ -4,24 +4,26 @@ buildscript {
     repositories {
         google()
         jcenter()
-
     }
+
     dependencies {
         classpath("com.android.tools.build:gradle:4.0.1")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Dep.Kotlin.version}")
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Dep.AndroidX.Navigation.version}")
-        classpath("com.google.dagger:hilt-android-gradle-plugin:2.28-alpha")
+        classpath("com.google.dagger:hilt-android-gradle-plugin:2.28.3-alpha")
     }
 }
 
 plugins {
     id("com.diffplug.gradle.spotless") version "3.27.1"
+    id("io.gitlab.arturbosch.detekt") version "1.12.0"
 }
 
 allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
     }
 }
 
@@ -47,6 +49,17 @@ subprojects {
         }
     }
 
+    apply(plugin = "io.gitlab.arturbosch.detekt")
+    detekt {
+        config = rootProject.files("config/detekt/detekt.yml")
+        reports {
+            html {
+                enabled = true
+                destination = file("build/reports/detekt.html")
+            }
+        }
+    }
+
     // `spotlessCheck` runs when a build includes `check`, notably during presubmit. In these cases
     // we prefer `spotlessCheck` run as early as possible since it fails in seconds. This prevents a
     // build from running for several minutes doing other intensive tasks (resource processing, code
@@ -68,5 +81,12 @@ subprojects {
                     "kotlinx.coroutines.ExperimentalCoroutinesApi," +
                     "kotlinx.coroutines.InternalCoroutinesApi," +
                     "kotlinx.coroutines.FlowPreview"
+    }
+
+    tasks {
+        withType<io.gitlab.arturbosch.detekt.Detekt> {
+            // Target version of the generated JVM bytecode. It is used for type resolution.
+            this.jvmTarget = "1.8"
+        }
     }
 }

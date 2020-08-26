@@ -29,7 +29,6 @@ class MoviePagingSource(
     private val movieService: MovieService
 ) : PagingSource<Int, Movie>() {
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Movie> {
-
         return try {
             val position = params.key ?: MOVIE_PAGE_INDEX
             val response = movieService.getTopRatedMovies(page = position)
