@@ -7,7 +7,7 @@ Fetch data from the network via repository pattern.
 
 <p align="center">
 <img alt="api" src="https://img.shields.io/badge/API-23%2B-green?logo=android"/>
-<img alt="license" src="https://img.shields.io/github/license/hongbeomi/FindTaek?color=blue&logo=apache"/>
+<img alt="license" src="https://img.shields.io/github/license/lagoJin/FindTaek?color=blue&logo=apache"/>
 </p>
 
 <img src="https://github.com/lagoJin/TopRatedMovies/blob/develop/previews/preview.gif" align="right" width="30%"></img>
