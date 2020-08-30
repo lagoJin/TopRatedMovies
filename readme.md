@@ -49,6 +49,7 @@ Library VersionCheck
 ```
 Kotlin CodeCheck
 ```
+./gradlew ktlint
 ./gradlew detekt
 ```
 
