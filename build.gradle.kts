@@ -17,6 +17,7 @@ buildscript {
 plugins {
     id("com.diffplug.gradle.spotless") version "3.27.1"
     id("io.gitlab.arturbosch.detekt") version "1.12.0"
+    id("name.remal.check-updates") version "1.0.209" apply false
 }
 
 allprojects {
@@ -28,6 +29,7 @@ allprojects {
 }
 
 subprojects {
+    apply(plugin = "name.remal.check-updates")
     apply(plugin = "com.diffplug.gradle.spotless")
     val ktlintVer = "0.37.2"
     spotless {

@@ -21,7 +21,6 @@ plugins {
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
     id("androidx.navigation.safeargs.kotlin")
-    id("name.remal.check-updates") version "1.0.209"
 }
 
 android.buildFeatures {
