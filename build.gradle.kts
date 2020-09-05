@@ -77,10 +77,10 @@ subprojects {
     tasks.withType<KotlinCompile>().configureEach {
         kotlinOptions.freeCompilerArgs +=
             "-Xuse-experimental=" +
-                    "kotlin.Experimental," +
-                    "kotlinx.coroutines.ExperimentalCoroutinesApi," +
-                    "kotlinx.coroutines.InternalCoroutinesApi," +
-                    "kotlinx.coroutines.FlowPreview"
+                "kotlin.Experimental," +
+                "kotlinx.coroutines.ExperimentalCoroutinesApi," +
+                "kotlinx.coroutines.InternalCoroutinesApi," +
+                "kotlinx.coroutines.FlowPreview"
     }
 
     tasks {
