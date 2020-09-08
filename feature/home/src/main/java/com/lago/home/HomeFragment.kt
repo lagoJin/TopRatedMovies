@@ -82,18 +82,16 @@ class HomeFragment : Fragment() {
             setHasFixedSize(true)
         }
 
-        movieAdapter.setItemClickListener(object : MovieAdapter.ItemClickListener {
-            override fun onClick(view: View, movieId: Int) {
-                val sharedElement = findPosterImage(
-                    binding.recyclerView,
-                    movieId
-                )
-                val extras = FragmentNavigatorExtras(
-                    sharedElement to sharedElement.transitionName
-                )
-                findNavController().navigate(HomeFragmentDirections.actionToDetail(movieId), extras)
-            }
-        })
+        movieAdapter.setItemClickListener { movieId ->
+            val sharedElement = findPosterImage(
+                binding.recyclerView,
+                movieId
+            )
+            val extras = FragmentNavigatorExtras(
+                sharedElement to sharedElement.transitionName
+            )
+            findNavController().navigate(HomeFragmentDirections.actionToDetail(movieId), extras)
+        }
 
         viewModel.init.observe(viewLifecycleOwner, EventObserver {
             search()

@@ -17,7 +17,6 @@
 package com.lago.home
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
@@ -26,7 +25,7 @@ import coil.api.load
 import com.lago.home.databinding.ItemMovieBinding
 import com.lago.model.Movie
 
-class MovieAdapter : PagingDataAdapter<Movie, MovieViewHolder>(movieDiff){
+class MovieAdapter : PagingDataAdapter<Movie, MovieViewHolder>(movieDiff) {
 
     private lateinit var itemClickListener: ItemClickListener
 
@@ -43,8 +42,8 @@ class MovieAdapter : PagingDataAdapter<Movie, MovieViewHolder>(movieDiff){
         this.itemClickListener = itemClickListener
     }
 
-    interface ItemClickListener {
-        fun onClick(view: View, movieId: Int)
+    fun interface ItemClickListener {
+        fun onClick(movieId: Int)
     }
 }
 
@@ -53,7 +52,7 @@ class MovieViewHolder(val view: ItemMovieBinding) : RecyclerView.ViewHolder(view
         view.root.setTag(R.id.tag_movie_id, item!!.id)
         view.apply {
             layout.setOnClickListener {
-                itemClickListener.onClick(layout, item.id)
+                itemClickListener.onClick(item.id)
             }
             title.text = item.title
             itemPoster.load("https://image.tmdb.org/t/p/w185_and_h278_bestv2${item.posterPath}")
