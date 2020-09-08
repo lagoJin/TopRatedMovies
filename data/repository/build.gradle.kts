@@ -28,7 +28,7 @@ apply {
 }
 
 dependencies {
-    api(project(":model"))
+    implementation(project(":model"))
     implementation(project(":data:api"))
     implementation(project(":core"))
 
