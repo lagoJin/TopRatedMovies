@@ -90,7 +90,8 @@ class HomeFragment : Fragment() {
             val extras = FragmentNavigatorExtras(
                 sharedElement to sharedElement.transitionName
             )
-            findNavController().navigate(HomeFragmentDirections.actionToDetail(movieId), extras)
+            val action = HomeFragmentDirections.actionToDetail(movieId)
+            findNavController().navigate(action, extras)
         }
 
         viewModel.init.observe(viewLifecycleOwner, EventObserver {
