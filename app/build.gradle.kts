@@ -53,6 +53,7 @@ android {
 dependencies {
     api(project(":core"))
     api(project(":feature:home"))
+    api(project(":data:api"))
     api(project(":data:repository"))
 
     implementation(Dep.Kotlin.stdlibJvm)
