@@ -57,7 +57,7 @@ object Dep {
     }
 
     object Hilt {
-        private val version = "2.28-alpha"
+        private val version = "2.28.3-alpha"
         val android = "com.google.dagger:hilt-android:$version"
         val viewModel = "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01"
         val androidCompiler = "androidx.hilt:hilt-compiler:1.0.0-alpha01"

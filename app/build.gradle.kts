@@ -41,7 +41,6 @@ android {
         versionName = Versions.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        testInstrumentationRunnerArguments = mapOf("clearPackageData" to "true")
     }
 
     compileOptions {

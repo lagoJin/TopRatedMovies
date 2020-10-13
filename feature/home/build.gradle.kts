@@ -35,7 +35,7 @@ apply {
 
 dependencies {
     implementation(project(":core"))
-    implementation(project(":data:repository"))
+    implementation(project(":model"))
     implementation(project(":widget"))
 
     implementation(Dep.Kotlin.stdlibJvm)
