@@ -1,35 +1,33 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:4.1.0")
+        classpath("com.android.tools.build:gradle:7.0.4")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Dep.Kotlin.version}")
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Dep.AndroidX.Navigation.version}")
-        classpath("com.google.dagger:hilt-android-gradle-plugin:2.28.3-alpha")
+        classpath("com.google.dagger:hilt-android-gradle-plugin:${Dep.Hilt.version}")
     }
 }
 
 plugins {
-    id("com.diffplug.gradle.spotless") version "3.27.1"
-    id("io.gitlab.arturbosch.detekt") version "1.12.0"
+    id("com.diffplug.spotless") version "5.0.0"
+    id("name.remal.check-dependency-updates") version "1.5.0"
 }
 
 allprojects {
     repositories {
         google()
-        jcenter()
         mavenCentral()
     }
 }
 
 subprojects {
-    apply(plugin = "com.diffplug.gradle.spotless")
-    val ktlintVer = "0.37.2"
+    apply(plugin = "com.diffplug.spotless")
+    apply(plugin = "name.remal.check-dependency-updates")
+    val ktlintVer = "0.43.2"
     spotless {
         kotlin {
             target("**/*.kt")
@@ -49,17 +47,6 @@ subprojects {
         }
     }
 
-    apply(plugin = "io.gitlab.arturbosch.detekt")
-    detekt {
-        config = rootProject.files("config/detekt/detekt.yml")
-        reports {
-            html {
-                enabled = true
-                destination = file("build/reports/detekt.html")
-            }
-        }
-    }
-
     // `spotlessCheck` runs when a build includes `check`, notably during presubmit. In these cases
     // we prefer `spotlessCheck` run as early as possible since it fails in seconds. This prevents a
     // build from running for several minutes doing other intensive tasks (resource processing, code
@@ -74,19 +61,12 @@ subprojects {
     }
 
     // TODO: Remove when the Coroutine and Flow APIs leave experimental/internal/preview.
-    tasks.withType<KotlinCompile>().configureEach {
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
         kotlinOptions.freeCompilerArgs +=
             "-Xuse-experimental=" +
-                "kotlin.Experimental," +
-                "kotlinx.coroutines.ExperimentalCoroutinesApi," +
-                "kotlinx.coroutines.InternalCoroutinesApi," +
-                "kotlinx.coroutines.FlowPreview"
-    }
-
-    tasks {
-        withType<io.gitlab.arturbosch.detekt.Detekt> {
-            // Target version of the generated JVM bytecode. It is used for type resolution.
-            this.jvmTarget = "1.8"
-        }
+                    "kotlin.Experimental," +
+                    "kotlinx.coroutines.ExperimentalCoroutinesApi," +
+                    "kotlinx.coroutines.InternalCoroutinesApi," +
+                    "kotlinx.coroutines.FlowPreview"
     }
 }
