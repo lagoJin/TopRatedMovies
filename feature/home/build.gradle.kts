@@ -20,6 +20,7 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":model"))
     implementation(project(":widget"))
+    implementation(project(":data:repository"))
 
     implementation(Dep.Kotlin.coroutines)
 
