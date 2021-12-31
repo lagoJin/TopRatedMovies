@@ -15,7 +15,7 @@ object Dep {
         val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
 
         object Navigation {
-            val version = "2.3.5"
+            val version = "2.4.0-beta02"
             val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:$version"
             val uiKtx = "androidx.navigation:navigation-ui-ktx:${version}"
             val args = "androidx.navigation:navigation-safe-args-gradle-plugin:$version"

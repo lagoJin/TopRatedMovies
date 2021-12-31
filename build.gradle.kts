@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:7.0.1")
+        classpath("com.android.tools.build:gradle:7.0.4")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Dep.Kotlin.version}")
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Dep.AndroidX.Navigation.version}")
         classpath("com.google.dagger:hilt-android-gradle-plugin:${Dep.Hilt.version}")
@@ -14,7 +14,6 @@ buildscript {
 
 plugins {
     id("com.diffplug.spotless") version "5.0.0"
-    id("name.remal.check-dependency-updates") version "1.5.0"
 }
 
 allprojects {
@@ -26,7 +25,6 @@ allprojects {
 
 subprojects {
     apply(plugin = "com.diffplug.spotless")
-    apply(plugin = "name.remal.check-dependency-updates")
     val ktlintVer = "0.43.2"
     spotless {
         kotlin {
@@ -53,15 +51,5 @@ subprojects {
         if (name == "preBuild") {
             mustRunAfter("spotlessCheck")
         }
-    }
-
-    // TODO: Remove when the Coroutine and Flow APIs leave experimental/internal/preview.
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-        kotlinOptions.freeCompilerArgs +=
-            "-Xuse-experimental=" +
-                    "kotlin.Experimental," +
-                    "kotlinx.coroutines.ExperimentalCoroutinesApi," +
-                    "kotlinx.coroutines.InternalCoroutinesApi," +
-                    "kotlinx.coroutines.FlowPreview"
     }
 }

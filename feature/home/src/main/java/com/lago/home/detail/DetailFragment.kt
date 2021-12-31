@@ -47,7 +47,8 @@ class DetailFragment : Fragment() {
         }
 
         sharedElementEnterTransition =
-            TransitionInflater.from(context).inflateTransition(R.transition.detail_shared_enter)
+            TransitionInflater.from(requireContext())
+                .inflateTransition(R.transition.detail_shared_enter)
         postponeEnterTransition(500L, TimeUnit.MILLISECONDS)
 
         return binding.root

@@ -18,7 +18,7 @@ package com.lago.core.util
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
-import coil.api.load
+import coil.load
 
 @BindingAdapter("srcCoil")
 fun srcCoil(imageView: ImageView, uri: String?) {

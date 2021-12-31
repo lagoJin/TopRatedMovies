@@ -21,7 +21,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import coil.api.load
+import coil.load
 import com.lago.home.databinding.ItemMovieBinding
 import com.lago.model.Movie
 
@@ -55,6 +55,7 @@ class MovieViewHolder(val view: ItemMovieBinding) : RecyclerView.ViewHolder(view
                 itemClickListener.onClick(item.id)
             }
             title.text = item.title
+
             itemPoster.load("https://image.tmdb.org/t/p/w185_and_h278_bestv2${item.posterPath}")
             itemPoster.transitionName = item.id.toString()
         }

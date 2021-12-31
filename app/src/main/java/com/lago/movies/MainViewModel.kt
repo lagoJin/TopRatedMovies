@@ -16,7 +16,9 @@
 
 package com.lago.movies
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MainViewModel @ViewModelInject constructor() : ViewModel()
+@HiltViewModel
+class MainViewModel @Inject constructor() : ViewModel()

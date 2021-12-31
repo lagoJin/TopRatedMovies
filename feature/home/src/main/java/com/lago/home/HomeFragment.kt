@@ -26,16 +26,14 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
-import androidx.paging.ExperimentalPagingApi
 import androidx.transition.TransitionInflater
 import com.lago.core.util.EventObserver
 import com.lago.home.databinding.HomeFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.concurrent.TimeUnit
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import java.util.concurrent.TimeUnit
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -58,7 +56,7 @@ class HomeFragment : Fragment() {
             viewModel = this@HomeFragment.viewModel
         }
         sharedElementReturnTransition =
-            TransitionInflater.from(context).inflateTransition(R.transition.detail_shared_enter)
+            TransitionInflater.from(requireContext()).inflateTransition(R.transition.detail_shared_enter)
 
         postponeEnterTransition(300L, TimeUnit.MILLISECONDS)
 
@@ -97,10 +95,10 @@ class HomeFragment : Fragment() {
         viewModel.init.observe(viewLifecycleOwner, EventObserver {
             search()
             lifecycleScope.launch {
-                @OptIn(ExperimentalPagingApi::class)
+                /*@OptIn(ExperimentalPagingApi::class)
                 movieAdapter.dataRefreshFlow.collect {
                     binding.recyclerView.scrollToPosition(0)
-                }
+                }*/
             }
         })
     }

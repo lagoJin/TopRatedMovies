@@ -16,7 +16,6 @@
 
 package com.lago.home
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -24,9 +23,12 @@ import androidx.paging.PagingData
 import com.lago.core.util.Event
 import com.lago.model.IMovieRepository
 import com.lago.model.Movie
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 
-class HomeViewModel @ViewModelInject constructor(
+@HiltViewModel
+class HomeViewModel @Inject constructor(
     private val movieRepository: IMovieRepository
 ) : ViewModel() {
 

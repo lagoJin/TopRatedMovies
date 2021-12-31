@@ -17,6 +17,7 @@
 package com.lago.repository
 
 import androidx.paging.PagingSource
+import androidx.paging.PagingState
 import com.lago.api.MovieService
 import com.lago.model.Movie
 import com.lago.repository.mapper.toTopRatedMovies
@@ -44,5 +45,9 @@ class MoviePagingSource(
         } catch (exception: HttpException) {
             return LoadResult.Error(exception)
         }
+    }
+
+    override fun getRefreshKey(state: PagingState<Int, Movie>): Int? {
+        return null
     }
 }
