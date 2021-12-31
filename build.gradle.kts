@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:7.0.4")
+        classpath("com.android.tools.build:gradle:7.0.1")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Dep.Kotlin.version}")
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${Dep.AndroidX.Navigation.version}")
         classpath("com.google.dagger:hilt-android-gradle-plugin:${Dep.Hilt.version}")
@@ -34,16 +34,11 @@ subprojects {
             ktlint(ktlintVer).userData(
                 mapOf("max_line_length" to "100", "disabled_rules" to "import-ordering")
             )
-            licenseHeaderFile(project.rootProject.file("copyright.kt"))
         }
         kotlinGradle {
             // same as kotlin, but for .gradle.kts files (defaults to '*.gradle.kts')
             target("**/*.gradle.kts")
             ktlint(ktlintVer)
-            licenseHeaderFile(
-                project.rootProject.file("copyright.kt"),
-                "(plugins |import |include)"
-            )
         }
     }
 
