@@ -13,7 +13,7 @@ buildscript {
 }
 
 plugins {
-    id("com.diffplug.spotless") version "5.0.0"
+    id("com.diffplug.spotless") version "6.1.0"
 }
 
 allprojects {
