@@ -77,15 +77,18 @@ class HomeFragment : Fragment() {
             findNavController().navigate(action, extras)
         }
 
-        viewModel.init.observe(viewLifecycleOwner, EventObserver {
-            search()
-            lifecycleScope.launch {
+        viewModel.init.observe(
+            viewLifecycleOwner,
+            EventObserver {
+                search()
+                lifecycleScope.launch {
                 /*@OptIn(ExperimentalPagingApi::class)
                 movieAdapter.dataRefreshFlow.collect {
                     binding.recyclerView.scrollToPosition(0)
                 }*/
+                }
             }
-        })
+        )
     }
 
     private fun findPosterImage(posters: ViewGroup, movieId: Int): View {
