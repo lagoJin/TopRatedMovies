@@ -24,7 +24,19 @@ object Dep {
         object Paging {
             private val version = "3.1.0"
             val runtime = "androidx.paging:paging-runtime:$version"
+
             val test = "androidx.paging:paging-common:$version"
+        }
+
+        object Compose {
+            private const val version = "1.0.5"
+            const val activity = "androidx.activity:activity-compose:1.3.1"
+            const val material = "androidx.compose.material:material:$version"
+            const val animation = "androidx.compose.animation:animation:$version"
+            const val compiler = "androidx.compose.compiler:compiler:$version"
+            const val paging = "androidx.paging:paging-compose:1.0.0-alpha14"
+            const val tooling = "androidx.compose.ui:ui-tooling:$version"
+            const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-rc01"
         }
     }
 
@@ -56,8 +68,9 @@ object Dep {
     }
 
     object Coil {
-        private val version = "1.4.0"
-        val coil = "io.coil-kt:coil:$version"
+        private const val version = "1.4.0"
+        const val coil = "io.coil-kt:coil:$version"
+        const val compose = "io.coil-kt:coil-compose:$version"
     }
 
     object Util {

@@ -19,8 +19,7 @@ dependencies {
     implementation(Dep.Kotlin.coroutines)
     implementation(Dep.Retrofit.retrofit)
 
-    implementation(Dep.AndroidX.Paging.runtime)
-    testImplementation(Dep.AndroidX.Paging.test)
+    implementation(Dep.AndroidX.Compose.paging)
 
     implementation(Dep.Hilt.hilt)
     kapt(Dep.Hilt.compiler)

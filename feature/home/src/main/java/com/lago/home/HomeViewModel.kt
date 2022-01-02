@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.paging.PagingData
+import androidx.paging.compose.collectAsLazyPagingItems
 import com.lago.core.util.Event
 import com.lago.model.Movie
 import com.lago.repository.IMovieRepository
@@ -27,8 +28,6 @@ class HomeViewModel @Inject constructor(
     }
 
     fun searchRepo(): Flow<PagingData<Movie>> {
-        val newResult: Flow<PagingData<Movie>> = movieRepository.getMovies()
-        currentResult = newResult
-        return newResult
+        return movieRepository.getMovies()
     }
 }

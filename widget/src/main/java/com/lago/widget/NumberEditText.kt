@@ -54,9 +54,8 @@ class NumberEditText @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas?) {
         val availableWidth = width - paddingRight - paddingLeft
-        var charSize = 0f
 
-        charSize = if (space < 0) {
+        val charSize: Float = if (space < 0) {
             (availableWidth / (numChars * 2 - 1))
         } else {
             (availableWidth - (space * (numChars - 1))) / numChars
@@ -67,7 +66,7 @@ class NumberEditText @JvmOverloads constructor(
 
         val text = text!!
         val textLength = text.length
-        val textWidths = FloatArray(textLength)
+        val textWidths = floatArrayOf(textLength.toFloat())
         paint.getTextWidths(text, 0, textLength, textWidths)
 
         for (i in 0..numChars.toInt()) {

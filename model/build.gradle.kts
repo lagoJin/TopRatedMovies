@@ -11,9 +11,5 @@ apply {
 }
 
 dependencies {
-    implementation(Dep.Kotlin.coroutines)
-
-    implementation(Dep.AndroidX.Paging.runtime)
-
     testImplementation(Dep.Junit.junit)
 }

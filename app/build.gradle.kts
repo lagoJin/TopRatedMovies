@@ -13,6 +13,7 @@ apply {
 android.buildFeatures {
     dataBinding = true
     viewBinding = true
+    compose = true
 }
 
 android {
@@ -27,18 +28,35 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.0.5"
+    }
+
+    android {
+        kotlinOptions {
+            freeCompilerArgs = freeCompilerArgs + listOf(
+                "-P",
+                "plugin:androidx.compose.compiler.plugins.kotlin:suppressKotlinVersionCompatibilityCheck=true"
+            )
+        }
     }
 }
 
 dependencies {
-    api(project(":core"))
-    api(project(":feature:home"))
-    api(project(":data:api"))
-    api(project(":data:repository"))
+    implementation(project(":core"))
+    implementation(project(":feature:home"))
+    implementation(project(":data:api"))
+    implementation(project(":data:repository"))
 
-    implementation(Dep.Kotlin.stdlibJvm)
+    implementation(Dep.AndroidX.Compose.activity)
+    implementation(Dep.AndroidX.Compose.viewModel)
+    implementation(Dep.AndroidX.Compose.material)
+    implementation(Dep.AndroidX.Compose.compiler)
+
     implementation(Dep.AndroidX.appCompat)
     implementation(Dep.AndroidX.coreKtx)
     implementation(Dep.AndroidX.constraint)
@@ -50,6 +68,7 @@ dependencies {
     implementation(Dep.OkHttp.okhttp)
 
     implementation(Dep.AndroidX.Navigation.fragmentKtx)
+    implementation("androidx.navigation:navigation-compose:2.4.0-rc01")
 
     implementation(Dep.Util.timber)
 

@@ -8,6 +8,7 @@ plugins {
 
 android.buildFeatures {
     dataBinding = true
+    compose = true
     viewBinding = true
 }
 
@@ -27,6 +28,12 @@ dependencies {
     implementation(Dep.AndroidX.Paging.runtime)
     testImplementation(Dep.AndroidX.Paging.test)
 
+    implementation(Dep.AndroidX.Compose.activity)
+    implementation(Dep.AndroidX.Compose.viewModel)
+    implementation(Dep.AndroidX.Compose.material)
+    implementation(Dep.AndroidX.Compose.paging)
+    implementation(Dep.AndroidX.Compose.compiler)
+
     implementation(Dep.AndroidX.appCompat)
     implementation(Dep.AndroidX.constraint)
     implementation(Dep.AndroidX.viewModelKtx)
@@ -35,10 +42,12 @@ dependencies {
     implementation(Dep.AndroidX.design)
 
     implementation(Dep.AndroidX.Navigation.fragmentKtx)
+    implementation("androidx.navigation:navigation-compose:2.4.0-rc01")
 
     implementation(Dep.Util.timber)
 
     implementation(Dep.Coil.coil)
+    implementation(Dep.Coil.compose)
 
     androidTestImplementation(Dep.Hilt.testing)
     kapt(Dep.Hilt.compiler)
