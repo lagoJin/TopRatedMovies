@@ -56,6 +56,7 @@ dependencies {
     implementation(Dep.AndroidX.Compose.viewModel)
     implementation(Dep.AndroidX.Compose.material)
     implementation(Dep.AndroidX.Compose.compiler)
+    implementation(Dep.AndroidX.Compose.hilt)
 
     implementation(Dep.AndroidX.appCompat)
     implementation(Dep.AndroidX.coreKtx)

@@ -34,8 +34,10 @@ object Dep {
             const val material = "androidx.compose.material:material:$version"
             const val animation = "androidx.compose.animation:animation:$version"
             const val compiler = "androidx.compose.compiler:compiler:$version"
+            const val hilt = "androidx.hilt:hilt-navigation-compose:1.0.0-beta01"
             const val paging = "androidx.paging:paging-compose:1.0.0-alpha14"
             const val tooling = "androidx.compose.ui:ui-tooling:$version"
+            const val runtime = "androidx.compose.runtime:runtime-livedata:$version"
             const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-rc01"
         }
     }
@@ -54,7 +56,7 @@ object Dep {
     }
 
     object Kotlin {
-        val version = "1.6.10"
+        val version = "1.5.10"
         val stdlibJvm = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version"
         val coroutinesVersion = "1.6.0"
         val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
