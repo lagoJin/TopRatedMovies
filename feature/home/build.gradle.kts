@@ -7,9 +7,7 @@ plugins {
 }
 
 android.buildFeatures {
-    dataBinding = true
     compose = true
-    viewBinding = true
 }
 
 apply {

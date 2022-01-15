@@ -5,8 +5,6 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
 }
 
-android.buildFeatures.dataBinding = true
-
 apply {
     from(rootProject.file("ktlint.gradle"))
     from(rootProject.file("gradle/android.gradle"))

@@ -12,6 +12,9 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.ExperimentalUnitApi
+import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
@@ -30,12 +33,11 @@ fun DetailScreenBody(
 
     val movieDetail by viewModel.movieDetail.observeAsState()
 
-    Row(
+    Column(
         modifier = Modifier
             .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 16.dp)
             .fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically
+        verticalArrangement = Arrangement.SpaceBetween
     ) {
         MovieImage(
             imageUrl = movieDetail?.posterPath.orEmpty(),
@@ -43,15 +45,40 @@ fun DetailScreenBody(
                 .fillMaxWidth()
                 .height(240.dp)
         )
-
-        Column {
+        Row(
+            modifier = Modifier.padding(top = 12.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             MovieDetailTitle(movieDetail = movieDetail)
+            MovieDetailDate(movieDetail = movieDetail)
         }
-
+        MovieDetailOverView(movieDetail = movieDetail)
     }
 }
 
+@OptIn(ExperimentalUnitApi::class)
 @Composable
 fun MovieDetailTitle(movieDetail: MovieDetail?) {
-    Text(text = movieDetail?.title.orEmpty())
+    Text(
+        text = movieDetail?.title.orEmpty(),
+        fontSize = TextUnit(20f, TextUnitType.Sp)
+    )
+}
+
+@Composable
+fun MovieDetailDate(movieDetail: MovieDetail?) {
+    Text(
+        modifier = Modifier.padding(start = 20.dp),
+        text = movieDetail?.releaseDate.orEmpty()
+    )
+}
+
+@OptIn(ExperimentalUnitApi::class)
+@Composable
+fun MovieDetailOverView(movieDetail: MovieDetail?) {
+    Text(
+        modifier = Modifier.padding(top = 12.dp),
+        text = movieDetail?.overview.orEmpty(),
+        fontSize = TextUnit(18f, TextUnitType.Sp)
+    )
 }
