@@ -42,7 +42,7 @@ dependencies {
     implementation(Dep.AndroidX.design)
 
     implementation(Dep.AndroidX.Navigation.fragmentKtx)
-    implementation("androidx.navigation:navigation-compose:2.4.0-rc01")
+    implementation("androidx.navigation:navigation-compose:2.5.0-rc02")
 
     implementation(Dep.Util.timber)
 
